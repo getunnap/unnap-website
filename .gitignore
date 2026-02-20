@@ -1,0 +1,17 @@
+# Shopify / env
+.env
+.env.*
+!.env.example
+
+# Shopify CLI local state (if present)
+.shopify/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+*.swp
+*.swo
+*~

@@ -1,0 +1,1984 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_RkimKJ": {
+      "type": "hero",
+      "blocks": {
+        "group_3cB4GW": {
+          "type": "group",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "custom",
+            "custom_width": 72,
+            "width_mobile": "custom",
+            "custom_width_mobile": 72,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 35,
+            "placeholder": "",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_KxeJ6r": {
+              "type": "text",
+              "settings": {
+                "text": "<p><strong>Build Healthy Habits</strong></p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "custom",
+                "font": "var(--font-subheading--family)",
+                "font_size": "4.5rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "balance",
+                "color": "var(--color-foreground-heading)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 9,
+                "padding-inline-end": 9
+              },
+              "blocks": {}
+            },
+            "text_pXLXhA": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>Get up, get moving, get living.</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "1.25rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 15,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_nazDaa": {
+              "type": "button",
+              "settings": {
+                "label": "Shop Now",
+                "link": "shopify://products/unnap",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
+                "width": "custom",
+                "custom_width": 41,
+                "width_mobile": "custom",
+                "custom_width_mobile": 79
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_KxeJ6r",
+            "text_pXLXhA",
+            "button_nazDaa"
+          ]
+        }
+      },
+      "block_order": [
+        "group_3cB4GW"
+      ],
+      "custom_css": [
+        "/* Make sure header always wins */.site-header {position: sticky; top: 0; z-index: 9999;}",
+        " /* Anything big above it must not outrank it */.hero,.swiper,.page-wrap {position: relative; z-index: 1;}",
+        " /* Avoid transforms on wrappers around <body> or the hero */.page-wrap,.hero {transform: none !important;}"
+      ],
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/compressed_hero_section.png",
+        "media_type_2": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "full-width",
+        "section_height": "full-screen",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+        "toggle_overlay": false,
+        "overlay_color": "#000000",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "custom_liquid_QCbecE": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "name": "t:names.custom_liquid",
+      "settings": {
+        "custom_liquid": "{% comment %}\n  UNNAP Review Carousel Section\n  Constantly moving carousel with 12 reviews\n{% endcomment %}\n\n<style>\n  :root {\n    --carousel-speed: 630s;\n  }\n  \n  @keyframes review-scroll {\n    from {\n      transform: translateX(0);\n    }\n    to {\n      transform: translateX(var(--scroll-end, -100%));\n    }\n  }\n  \n  .review-carousel-section {\n    width: 100%;\n    padding: 80px 0;\n    overflow: hidden;\n    position: relative;\n    background-color: #07080b;\n  }\n\n  .review-carousel-container {\n    width: 100%;\n    overflow: hidden;\n    position: relative;\n    cursor: grab;\n  }\n\n  .review-carousel-container:active {\n    cursor: grabbing;\n  }\n\n  .review-carousel-track {\n    display: flex;\n    animation: review-scroll var(--carousel-speed) linear forwards;\n    user-select: none;\n    will-change: transform;\n  }\n\n  .review-carousel-container.scrolling .review-carousel-track {\n    animation-play-state: paused;\n  }\n\n  .review-carousel-container.scrolling {\n    cursor: grabbing;\n  }\n\n  .review-carousel-track.manual-scroll {\n    animation: none !important;\n  }\n\n  .review-carousel-track .review-item {\n    margin-right: 30px;\n  }\n\n  .review-item {\n    flex: 0 0 380px;\n    min-width: 380px;\n    flex-shrink: 0;\n  }\n\n  .review-box {\n    background-color: #1a1b1f;\n    border: 1px solid #2a2b2f;\n    border-radius: 16px;\n    padding: 32px;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);\n    transition: transform 0.3s ease, box-shadow 0.3s ease;\n  }\n\n  .review-box:hover {\n    transform: translateY(-5px);\n    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);\n  }\n\n  .review-stars {\n    color: #ffd700;\n    font-size: 20px;\n    margin-bottom: 16px;\n    letter-spacing: 2px;\n  }\n\n  .review-text {\n    color: #e0e0e0;\n    font-size: 16px;\n    line-height: 1.6;\n    margin: 0 0 24px 0;\n    flex-grow: 1;\n    font-style: italic;\n  }\n\n  .review-author {\n    display: flex;\n    flex-direction: column;\n    margin-top: auto;\n  }\n\n  .review-author strong {\n    color: #ffffff;\n    font-size: 16px;\n    font-weight: 600;\n    margin-bottom: 4px;\n  }\n\n  .review-author span {\n    color: #a0a0a0;\n    font-size: 14px;\n  }\n\n  .review-carousel-section:hover .review-carousel-track {\n    animation-play-state: paused;\n  }\n\n  @media (max-width: 768px) {\n    .review-item {\n      flex: 0 0 320px;\n      min-width: 320px;\n    }\n\n    .review-box {\n      padding: 24px;\n    }\n\n    .review-carousel-section {\n      padding: 60px 0;\n    }\n  }\n\n  @media (max-width: 480px) {\n    .review-item {\n      flex: 0 0 280px;\n      min-width: 280px;\n    }\n\n    .review-text {\n      font-size: 14px;\n    }\n  }\n</style>\n\n<div class=\"review-carousel-section\" style=\"background-color: #07080b;\">\n  <div class=\"review-carousel-container\">\n    <div class=\"review-carousel-track\">\n      {% comment %} First set of reviews {% endcomment %}\n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"UNNAP forces me to actually get out of bed. No more hitting snooze - I have to physically get up and scan it. Life changer for my morning routine!\"</p>\n          <div class=\"review-author\">\n            <strong>Sarah Mitchell</strong>\n            <span>Fitness Coach</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I used to sleep through multiple alarms. Now I have to get up and walk to my UNNAP device to turn it off. It's the accountability I needed!\"</p>\n          <div class=\"review-author\">\n            <strong>James Rodriguez</strong>\n            <span>Software Engineer</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"Perfect for medication reminders! I place UNNAP next to my pills, so when the alarm goes off, I'm already there to take them. No more forgetting!\"</p>\n          <div class=\"review-author\">\n            <strong>Emily Chen</strong>\n            <span>Marketing Director</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"The physical requirement to scan the device is genius. Once I'm up and moving, I stay up. No more falling back into bed!\"</p>\n          <div class=\"review-author\">\n            <strong>Michael Thompson</strong>\n            <span>Entrepreneur</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I struggle with depression and getting out of bed. UNNAP gives me that push I need - I can't ignore it, I have to get up and move.\"</p>\n          <div class=\"review-author\">\n            <strong>Jessica Williams</strong>\n            <span>Yoga Instructor</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"As a doctor, I recommend UNNAP to patients who need medication reminders. The scan requirement ensures they actually go to where their meds are.\"</p>\n          <div class=\"review-author\">\n            <strong>David Park</strong>\n            <span>Doctor</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I was skeptical, but having to physically scan UNNAP to turn it off has transformed my mornings. I'm actually productive before 9am now!\"</p>\n          <div class=\"review-author\">\n            <strong>Amanda Foster</strong>\n            <span>Teacher</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"My partner and I both use UNNAP. We place it in the kitchen, so by the time we scan it, we're already making coffee and starting our day together.\"</p>\n          <div class=\"review-author\">\n            <strong>Robert Martinez</strong>\n            <span>Architect</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"Night shift worker here. UNNAP helps me wake up at the right time and actually get moving. The scan requirement means I can't just roll over and go back to sleep.\"</p>\n          <div class=\"review-author\">\n            <strong>Lisa Anderson</strong>\n            <span>Nurse</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I've tried every alarm app and gadget. UNNAP is the only one that works because you can't cheat it - you MUST get up and scan. Game changer!\"</p>\n          <div class=\"review-author\">\n            <strong>Christopher Lee</strong>\n            <span>Consultant</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"UNNAP has helped me build a consistent morning routine. By forcing me to get up and move, I'm more motivated to start my day right. Highly recommend!\"</p>\n          <div class=\"review-author\">\n            <strong>Nicole Brown</strong>\n            <span>Designer</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"The physical act of scanning UNNAP breaks the cycle of hitting snooze. Once I'm up and moving, I stay up. It's become essential to my daily routine.\"</p>\n          <div class=\"review-author\">\n            <strong>Daniel Taylor</strong>\n            <span>Financial Analyst</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I'm a chronic snoozer. UNNAP changed everything because I can't just reach over and turn it off - I have to get out of bed and walk to it. Brilliant design!\"</p>\n          <div class=\"review-author\">\n            <strong>Marcus Johnson</strong>\n            <span>Graphic Designer</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"UNNAP sits in my bathroom. By the time I scan it to turn off the alarm, I'm already there to brush my teeth and start my day. No more going back to bed!\"</p>\n          <div class=\"review-author\">\n            <strong>Rachel Green</strong>\n            <span>Nutritionist</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"As someone with ADHD, I need that physical push to get moving. UNNAP's scan requirement is exactly what I needed. I'm more consistent than ever!\"</p>\n          <div class=\"review-author\">\n            <strong>Alex Rivera</strong>\n            <span>Content Creator</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I place UNNAP by my workout gear. When the alarm goes off, I'm already there and ready to exercise. It's eliminated my excuses completely!\"</p>\n          <div class=\"review-author\">\n            <strong>Jordan Kim</strong>\n            <span>Personal Trainer</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"College student here. UNNAP helps me wake up for early classes. The scan requirement means I can't just turn it off and go back to sleep. Game changer!\"</p>\n          <div class=\"review-author\">\n            <strong>Taylor Morgan</strong>\n            <span>Student</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I use UNNAP for my morning vitamins. Placed it right next to my supplement organizer. Now I never forget because I have to go there to turn it off!\"</p>\n          <div class=\"review-author\">\n            <strong>Casey White</strong>\n            <span>Project Manager</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"The best part about UNNAP? You can't cheat it. No app to close, no button to press from bed. You MUST physically get up. That's what makes it work!\"</p>\n          <div class=\"review-author\">\n            <strong>Morgan Davis</strong>\n            <span>Photographer</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I'm a new parent and sleep is precious. UNNAP ensures I actually wake up when I need to, not just hit snooze and miss important moments with my baby.\"</p>\n          <div class=\"review-author\">\n            <strong>Sam Wilson</strong>\n            <span>Parent</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"UNNAP helped me break my phone alarm dependency. Now I have a dedicated device that forces me to get up. My mornings are so much better!\"</p>\n          <div class=\"review-author\">\n            <strong>Riley Martinez</strong>\n            <span>Writer</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I set UNNAP in my kitchen for morning alarms. By the time I scan it, I'm already making breakfast and starting my day. No more skipping meals!\"</p>\n          <div class=\"review-author\">\n            <strong>Quinn Anderson</strong>\n            <span>Chef</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"Chronic fatigue sufferer here. UNNAP gives me that extra push I need. Once I'm up and moving to scan it, I'm already past the hardest part of waking up.\"</p>\n          <div class=\"review-author\">\n            <strong>Blake Thompson</strong>\n            <span>Retail Manager</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I use UNNAP for my diabetes medication. Placed it right where I keep my insulin. The scan requirement ensures I never miss a dose. Life-saving device!\"</p>\n          <div class=\"review-author\">\n            <strong>Avery Chen</strong>\n            <span>Accountant</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"Remote worker struggling with morning motivation. UNNAP forces me out of bed and to my desk. By the time I scan it, I'm ready to start working!\"</p>\n          <div class=\"review-author\">\n            <strong>Skylar Lee</strong>\n            <span>Freelancer</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"UNNAP is perfect for my meditation practice. I place it in my meditation corner, so when I scan it, I'm already there to start my morning mindfulness routine.\"</p>\n          <div class=\"review-author\">\n            <strong>River Patel</strong>\n            <span>Life Coach</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I'm a shift worker with irregular sleep. UNNAP helps me wake up at different times without falling back asleep. The physical requirement is key!\"</p>\n          <div class=\"review-author\">\n            <strong>Phoenix Brown</strong>\n            <span>Security Guard</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"UNNAP sits by my water bottle. When I scan it in the morning, I'm already there to hydrate. It's helped me build better morning habits!\"</p>\n          <div class=\"review-author\">\n            <strong>Sage Williams</strong>\n            <span>Hydration Coach</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I've tried everything to wake up on time. UNNAP is the only solution that works because you physically cannot ignore it. Worth every penny!\"</p>\n          <div class=\"review-author\">\n            <strong>Rowan Garcia</strong>\n            <span>Sales Rep</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"UNNAP helped me establish a consistent sleep schedule. By forcing me to get up at the same time every day, my body clock has reset completely.\"</p>\n          <div class=\"review-author\">\n            <strong>Indigo Taylor</strong>\n            <span>Sleep Therapist</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I place UNNAP by my coffee maker. When the alarm goes off, I'm already in the kitchen making my morning brew. Best way to start the day!\"</p>\n          <div class=\"review-author\">\n            <strong>Ocean Martinez</strong>\n            <span>Barista</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"As someone recovering from surgery, UNNAP ensures I take my pain medication on time. The scan requirement means I actually get up and move, which helps recovery!\"</p>\n          <div class=\"review-author\">\n            <strong>Kai Rodriguez</strong>\n            <span>Physical Therapist</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"UNNAP is brilliant for my morning skincare routine. I place it by my bathroom sink, so when I scan it, I'm already there to wash my face and start my day right!\"</p>\n          <div class=\"review-author\">\n            <strong>Luna Foster</strong>\n            <span>Beauty Blogger</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I'm a heavy sleeper who sleeps through everything. UNNAP's persistent alarm and scan requirement is the only thing that actually wakes me up. Thank you!\"</p>\n          <div class=\"review-author\">\n            <strong>Atlas Moore</strong>\n            <span>Construction Worker</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"UNNAP helps me with my morning journaling habit. I place it on my desk, so when I scan it, I'm already there to write. It's built consistency I never had!\"</p>\n          <div class=\"review-author\">\n            <strong>Nova Jackson</strong>\n            <span>Journalist</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I use UNNAP for my blood pressure medication. Placed it right next to my pill organizer. The scan requirement ensures I never miss a dose. My doctor is impressed!\"</p>\n          <div class=\"review-author\">\n            <strong>Zephyr Lewis</strong>\n            <span>Retired Teacher</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"UNNAP sits by my front door for morning walks. When I scan it, I'm already there with my shoes on. It's helped me build a daily walking habit!\"</p>\n          <div class=\"review-author\">\n            <strong>Orion Walker</strong>\n            <span>Retiree</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I'm a night owl trying to become a morning person. UNNAP forces me to get up and move, which helps reset my circadian rhythm. It's working!\"</p>\n          <div class=\"review-author\">\n            <strong>Juno Hall</strong>\n            <span>Musician</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"UNNAP is perfect for my morning reading habit. I place it by my reading chair, so when I scan it, I'm already there with my book. Best way to start the day!\"</p>\n          <div class=\"review-author\">\n            <strong>Cosmos Young</strong>\n            <span>Librarian</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I use UNNAP for my morning stretching routine. Placed it in my workout space, so when I scan it, I'm already there to stretch. It's eliminated my excuses!\"</p>\n          <div class=\"review-author\">\n            <strong>Nova King</strong>\n            <span>Yoga Instructor</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"UNNAP helped me break my phone addiction in the morning. Instead of scrolling in bed, I have to get up and scan the device. My productivity has skyrocketed!\"</p>\n          <div class=\"review-author\">\n            <strong>Atlas Wright</strong>\n            <span>Productivity Coach</span>\n          </div>\n        </div>\n      </div>\n      \n      <div class=\"review-item\">\n        <div class=\"review-box\">\n          <div class=\"review-stars\">★★★★★</div>\n          <p class=\"review-text\">\"I place UNNAP by my plant care station. When I scan it in the morning, I'm already there to water my plants. It's helped me keep them alive!\"</p>\n          <div class=\"review-author\">\n            <strong>Luna Scott</strong>\n            <span>Gardener</span>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<script>\n  (function() {\n    const container = document.querySelector('.review-carousel-container');\n    const track = document.querySelector('.review-carousel-track');\n    \n    if (!container || !track) return;\n    \n    // Calculate and set the animation end position\n    const trackWidth = track.scrollWidth;\n    const containerWidth = container.offsetWidth;\n    const maxScroll = -(trackWidth - containerWidth);\n    track.style.setProperty('--scroll-end', maxScroll + 'px');\n    \n    let isDown = false;\n    let startX;\n    let currentTranslate = 0;\n    let animationId;\n    let scrollTimeout;\n    let isManualScrolling = false;\n    \n    // Mouse drag functionality\n    container.addEventListener('mousedown', (e) => {\n      isDown = true;\n      isManualScrolling = true;\n      track.classList.add('manual-scroll');\n      container.classList.add('scrolling');\n      startX = e.pageX;\n      container.style.cursor = 'grabbing';\n      \n      // Get current transform value\n      const style = window.getComputedStyle(track);\n      const matrix = new DOMMatrix(style.transform);\n      currentTranslate = matrix.m41;\n    });\n    \n    container.addEventListener('mouseleave', () => {\n      if (isDown) {\n        isDown = false;\n        container.style.cursor = 'grab';\n      }\n    });\n    \n    container.addEventListener('mouseup', () => {\n      if (isDown) {\n        isDown = false;\n        container.style.cursor = 'grab';\n        resetAnimation();\n      }\n    });\n    \n    container.addEventListener('mousemove', (e) => {\n      if (!isDown) return;\n      e.preventDefault();\n      const x = e.pageX;\n      // Use 1:1 movement - scroll moves exactly as fast as mouse moves\n      const walk = x - startX;\n      currentTranslate = currentTranslate + walk;\n      \n      // Constrain to bounds (0 to maxScroll)\n      if (currentTranslate > 0) {\n        currentTranslate = 0;\n      } else if (currentTranslate < maxScroll) {\n        currentTranslate = maxScroll;\n      }\n      \n      track.style.transform = `translateX(${currentTranslate}px)`;\n      startX = x;\n    });\n    \n    // Touch/swipe functionality\n    let touchStartX = 0;\n    let touchCurrentTranslate = 0;\n    \n    container.addEventListener('touchstart', (e) => {\n      isManualScrolling = true;\n      track.classList.add('manual-scroll');\n      container.classList.add('scrolling');\n      touchStartX = e.touches[0].pageX;\n      \n      const style = window.getComputedStyle(track);\n      const matrix = new DOMMatrix(style.transform);\n      touchCurrentTranslate = matrix.m41;\n    });\n    \n    container.addEventListener('touchmove', (e) => {\n      e.preventDefault();\n      const x = e.touches[0].pageX;\n      // Use 1:1 movement - scroll moves exactly as fast as finger moves\n      const walk = x - touchStartX;\n      touchCurrentTranslate = touchCurrentTranslate + walk;\n      \n      // Constrain to bounds (0 to maxScroll)\n      if (touchCurrentTranslate > 0) {\n        touchCurrentTranslate = 0;\n      } else if (touchCurrentTranslate < maxScroll) {\n        touchCurrentTranslate = maxScroll;\n      }\n      \n      track.style.transform = `translateX(${touchCurrentTranslate}px)`;\n      touchStartX = x;\n    });\n    \n    container.addEventListener('touchend', () => {\n      currentTranslate = touchCurrentTranslate;\n      resetAnimation();\n    });\n    \n    // Wheel scroll functionality\n    container.addEventListener('wheel', (e) => {\n      e.preventDefault();\n      isManualScrolling = true;\n      track.classList.add('manual-scroll');\n      container.classList.add('scrolling');\n      \n      const style = window.getComputedStyle(track);\n      const matrix = new DOMMatrix(style.transform);\n      currentTranslate = matrix.m41;\n      currentTranslate += e.deltaY;\n      \n      // Constrain to bounds (0 to maxScroll)\n      if (currentTranslate > 0) {\n        currentTranslate = 0;\n      } else if (currentTranslate < maxScroll) {\n        currentTranslate = maxScroll;\n      }\n      \n      track.style.transform = `translateX(${currentTranslate}px)`;\n      resetAnimation();\n    });\n    \n    // Reset animation after user stops interacting\n    function resetAnimation() {\n      clearTimeout(scrollTimeout);\n      scrollTimeout = setTimeout(() => {\n        isManualScrolling = false;\n        // Remove inline transform to let CSS animation take over\n        track.style.transform = '';\n        // Remove manual-scroll class to let CSS animation resume\n        track.classList.remove('manual-scroll');\n        container.classList.remove('scrolling');\n        // CSS animation will continue from where it left off or restart\n      }, 2000);\n    }\n    \n    // Pause on hover\n    container.addEventListener('mouseenter', () => {\n      if (!isManualScrolling) {\n        container.classList.add('scrolling');\n      }\n    });\n    \n    container.addEventListener('mouseleave', () => {\n      if (!isDown && !isManualScrolling) {\n        container.classList.remove('scrolling');\n      }\n    });\n  })();\n</script>",
+        "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "section_eMqQD7": {
+      "type": "section",
+      "blocks": {
+        "group_aWGVAd": {
+          "type": "group",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 32,
+            "width": "fill",
+            "custom_width": 94,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "custom",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+            "background_media": "image",
+            "video_position": "cover",
+            "background_image": "shopify://shop_images/alarmed-6903698567b2b.jpg",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 2.5,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "hero-apparel-2",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 100,
+            "padding-block-end": 100,
+            "padding-inline-start": 40,
+            "padding-inline-end": 40
+          },
+          "blocks": {
+            "text_UzDgBa": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>Alarm activated</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_UzDgBa"
+          ]
+        },
+        "spacer_q9RVQN": {
+          "type": "spacer",
+          "name": "t:names.spacer",
+          "settings": {
+            "size": "pixel",
+            "percent_size": 21,
+            "pixel_size": 24,
+            "custom_mobile_size": false,
+            "size_mobile": "percent",
+            "percent_size_mobile": 26,
+            "pixel_size_mobile": 308
+          },
+          "blocks": {}
+        },
+        "group_K47F7J": {
+          "type": "group",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 32,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "custom",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+            "background_media": "image",
+            "video_position": "cover",
+            "background_image": "shopify://shop_images/IMG_1797_1.jpg",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 2.5,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "hero-apparel-1",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 100,
+            "padding-block-end": 100,
+            "padding-inline-start": 40,
+            "padding-inline-end": 40
+          },
+          "blocks": {
+            "text_wWQYVC": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>Locate UNnap device</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_wWQYVC"
+          ]
+        },
+        "spacer_3nYQfJ": {
+          "type": "spacer",
+          "name": "t:names.spacer",
+          "settings": {
+            "size": "pixel",
+            "percent_size": 21,
+            "pixel_size": 24,
+            "custom_mobile_size": false,
+            "size_mobile": "percent",
+            "percent_size_mobile": 26,
+            "pixel_size_mobile": 308
+          },
+          "blocks": {}
+        },
+        "group_8d8MVy": {
+          "type": "group",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 33,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "custom",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+            "background_media": "image",
+            "video_position": "cover",
+            "background_image": "shopify://shop_images/IMG_0184_1.jpg",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 2.5,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "hero-apparel-1",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 100,
+            "padding-block-end": 100,
+            "padding-inline-start": 40,
+            "padding-inline-end": 40
+          },
+          "blocks": {
+            "text_afBqKd": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>Deactivate alarm</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_afBqKd"
+          ]
+        }
+      },
+      "block_order": [
+        "group_aWGVAd",
+        "spacer_q9RVQN",
+        "group_K47F7J",
+        "spacer_3nYQfJ",
+        "group_8d8MVy"
+      ],
+      "custom_css": [
+        ".custom-section-content {border-radius: 24px; overflow: hidden; padding: 20px; /* space around all images */ display: flex; /* or grid */ flex-wrap: wrap; /* only if flex */ gap: 18px; /* space between images */}",
+        ".custom-section-content .group-block__media-wrapper img {border-radius: 24px; display: block;}"
+      ],
+      "name": "t:names.split_showcase",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 0,
+        "section_width": "full-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "section_8FaHQ8": {
+      "type": "section",
+      "blocks": {
+        "spacer_y7bBhU": {
+          "type": "spacer",
+          "name": "t:names.spacer",
+          "settings": {
+            "size": "pixel",
+            "percent_size": 9,
+            "pixel_size": 32,
+            "custom_mobile_size": false,
+            "size_mobile": "percent",
+            "percent_size_mobile": 100,
+            "pixel_size_mobile": 120
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "spacer_y7bBhU"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "media_with_content_xkQNJp": {
+      "type": "media-with-content",
+      "blocks": {
+        "media": {
+          "type": "_media-without-appearance",
+          "static": true,
+          "settings": {
+            "media_type": "video",
+            "image": "shopify://shop_images/UNNAP_device_white_bg.png",
+            "link": "",
+            "video": "shopify://files/videos/compressed.mov",
+            "video_loop": true,
+            "video_autoplay": true,
+            "image_position": "cover",
+            "video_position": "cover"
+          },
+          "blocks": {}
+        },
+        "content": {
+          "type": "_content-without-appearance",
+          "static": true,
+          "settings": {
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "space-between",
+            "gap": 24
+          },
+          "blocks": {
+            "text_gatbV8": {
+              "type": "text",
+              "name": "t:names.caption",
+              "settings": {
+                "text": "<p>NEW YEARS RESTOCK</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "group_xXgpVj": {
+              "type": "group",
+              "settings": {
+                "link": "",
+                "open_in_new_tab": false,
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "placeholder": "",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "text_6naQVB": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<p><strong>Now live</strong></p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h3",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_i7zHkR": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Claim your UNNAP device before it sells out</p>",
+                    "width": "fit-content",
+                    "max_width": "narrow",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1.25rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_6naQVB",
+                "text_i7zHkR"
+              ]
+            },
+            "button_wHMVDq": {
+              "type": "button",
+              "settings": {
+                "label": "Shop now",
+                "link": "shopify://products/unnap",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_gatbV8",
+            "group_xXgpVj",
+            "button_wHMVDq"
+          ]
+        }
+      },
+      "custom_css": [
+        ".media-block {padding-left: 15px; /* adjust as needed */ padding-right: 15px; /* adjust as needed */ border-radius: 24px; /* adjust as needed */ overflow: hidden; /* ensures child images/videos respect the radius */}",
+        ".media-block img,.media-block video {border-radius: inherit; /* matches the parent’s corners */}"
+      ],
+      "name": "t:names.editorial",
+      "settings": {
+        "media_position": "left",
+        "media_width": "medium",
+        "media_height": "60svh",
+        "section_width": "full-width",
+        "extend_media": true,
+        "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+        "padding-block-start": 20,
+        "padding-block-end": 20
+      }
+    },
+    "ss_modal_popup_3_CVrNww": {
+      "type": "ss-modal-popup-3",
+      "blocks": {
+        "sub_heading_6fVpYd": {
+          "type": "sub_heading",
+          "settings": {
+            "sub_heading": "<p>BLACK FRIDAY EXCLUSIVE</p>",
+            "sub_heading_custom": true,
+            "sub_heading_font": "montserrat_n4",
+            "sub_heading_size": 12,
+            "sub_heading_size_mobile": 12,
+            "sub_heading_advanced": false,
+            "sub_heading_height": 130,
+            "sub_heading_mt": 12,
+            "sub_heading_mt_mobile": 12,
+            "sub_heading_color": "#07080b"
+          }
+        },
+        "heading_jU9pki": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p><strong>Get 40% Off Your Order</strong></p>",
+            "heading_custom": true,
+            "heading_font": "montserrat_n7",
+            "heading_size": 24,
+            "heading_size_mobile": 20,
+            "heading_advanced": false,
+            "heading_height": 130,
+            "heading_mt": 12,
+            "heading_mt_mobile": 12,
+            "heading_color": "#07080b"
+          }
+        },
+        "newsletter_dbDTTL": {
+          "type": "newsletter",
+          "settings": {
+            "placeholder_mail": "Email address",
+            "input_custom": false,
+            "input_font": "josefin_sans_n4",
+            "input_size": 16,
+            "input_size_mobile": 16,
+            "input_advanced": false,
+            "input_height": 100,
+            "input_padding_horizontal": 20,
+            "input_padding_horizontal_mobile": 20,
+            "input_padding_vertical": 18,
+            "input_padding_vertical_mobile": 18,
+            "input_radius": 12,
+            "input_border_thickness": 1,
+            "form_mt": 32,
+            "form_mt_mobile": 24,
+            "submit": "Get Discount",
+            "submit_custom": false,
+            "submit_font": "josefin_sans_n4",
+            "submit_size": 14,
+            "submit_size_mobile": 14,
+            "submit_advanced": false,
+            "submit_height": 100,
+            "submit_padding_vertical": 18,
+            "submit_padding_vertical_mobile": 18,
+            "submit_padding_horizontal": 20,
+            "submit_padding_horizontal_mobile": 20,
+            "submit_radius": 12,
+            "submit_border_thickness": 0,
+            "heading_thanks_text": "Code: FOUNDING40",
+            "thanks_text": "Use this code at checkout to receive 25% off your first order.",
+            "thanks_text_custom": false,
+            "thanks_text_font": "josefin_sans_n4",
+            "thanks_text_size": 14,
+            "thanks_text_size_mobile": 14,
+            "thanks_text_height": 150,
+            "thanks_text_mt": 8,
+            "thanks_text_mt_mobile": 8,
+            "input_color": "#07080b",
+            "input_placeholder_color": "#707070",
+            "input_bg_color": "#ffffff",
+            "input_border_color": "#dfdfdf",
+            "input_border_focus_color": "rgba(0,0,0,0)",
+            "submit_color": "#ffffff",
+            "submit_hover_color": "#ffffff",
+            "submit_bg_color": "#07080b",
+            "submit_bg_hover_color": "#333333",
+            "submit_border_color": "#07080b",
+            "submit_border_hover_color": "#07080b",
+            "heading_thanks_text_color": "#07080b",
+            "thanks_text_color": "#07080b"
+          }
+        },
+        "disclaimer_cfYQz3": {
+          "type": "disclaimer",
+          "settings": {
+            "disclaimer": "<p>By registering, you agree to receive marketing emails.</p>",
+            "disclaimer_custom": false,
+            "disclaimer_font": "josefin_sans_n4",
+            "disclaimer_size": 12,
+            "disclaimer_size_mobile": 12,
+            "disclaimer_advanced": false,
+            "disclaimer_height": 150,
+            "disclaimer_mt": 12,
+            "disclaimer_mt_mobile": 12,
+            "disclaimer_color": "#07080b"
+          }
+        }
+      },
+      "block_order": [
+        "sub_heading_6fVpYd",
+        "heading_jU9pki",
+        "newsletter_dbDTTL",
+        "disclaimer_cfYQz3"
+      ],
+      "disabled": true,
+      "name": "SS - Modal popup #3",
+      "settings": {
+        "display_options": "after_seconds",
+        "seconds": 5,
+        "percent": 10,
+        "hide_modal_days": 0,
+        "button": "Sign Up for Updates",
+        "button_custom": false,
+        "button_font": "josefin_sans_n4",
+        "button_size": 16,
+        "button_size_mobile": 16,
+        "button_advanced": false,
+        "button_height": 100,
+        "button_padding_vertical": 20,
+        "button_padding_vertical_mobile": 20,
+        "button_padding_horizontal": 24,
+        "button_padding_horizontal_mobile": 24,
+        "button_radius": 12,
+        "button_border_thickness": 0,
+        "button_close_size": 16,
+        "button_close_size_mobile": 16,
+        "button_fixed": true,
+        "button_align": "left",
+        "button_align_mobile": "right",
+        "button_vertical_align": "bottom",
+        "button_vertical_align_mobile": "bottom",
+        "button_placement_advanced": false,
+        "button_horizontal_dst_to_edge": 24,
+        "button_horizontal_dst_to_edge_mobile": 20,
+        "button_vertical_dst_to_edge": 24,
+        "button_vertical_dst_to_edge_mobile": 20,
+        "modal_width": 60,
+        "modal_width_mobile": 90,
+        "modal_radius": 20,
+        "modal_border_thickness": 0,
+        "modal_overlay": 50,
+        "modal_horizontal_position": "center",
+        "modal_horizontal_position_mobile": "center",
+        "modal_vertical_position": "center",
+        "image_hide_mobile": true,
+        "image": "shopify://shop_images/916.png",
+        "image_width": 45,
+        "image_width_mobile": 100,
+        "image_ratio": "square",
+        "image_ratio_mobile": "landscape",
+        "image_position_desktop": "left",
+        "content_align": "center",
+        "content_align_mobile": "center",
+        "content_advanced": true,
+        "content_padding_vertical": 50,
+        "content_padding_vertical_mobile": 40,
+        "content_padding_horizontal": 40,
+        "content_padding_horizontal_mobile": 16,
+        "button_color": "#ffffff",
+        "button_hover_color": "#ffffff",
+        "button_bg_color": "#121212",
+        "button_bg_hover_color": "#333333",
+        "button_border_color": "#121212",
+        "button_border_hover_color": "#121212",
+        "modal_bg_color": "#ffffff",
+        "modal_border_color": "#07080b",
+        "close_color": "#07080b",
+        "background_style": "solid",
+        "background_color": "#ffffff",
+        "background_gradient": "linear-gradient(180deg, #FFFFFF 0%, #F2F2F2 100%)",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "width": "page",
+        "content_width": 1200,
+        "border_thickness": 0,
+        "section_radius": 0,
+        "lazy": false
+      }
+    },
+    "section_jLCVXp": {
+      "type": "section",
+      "blocks": {
+        "spacer_bGWyjc": {
+          "type": "spacer",
+          "name": "t:names.spacer",
+          "settings": {
+            "size": "pixel",
+            "percent_size": 9,
+            "pixel_size": 72,
+            "custom_mobile_size": false,
+            "size_mobile": "percent",
+            "percent_size_mobile": 100,
+            "pixel_size_mobile": 120
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "spacer_bGWyjc"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "section_JGEdHC": {
+      "type": "section",
+      "blocks": {
+        "text_8pm7tf": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<p><strong>UNLIKE ANY ALARM YOU'VE USED BEFORE</strong></p><p></p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 16,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_8pm7tf"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "section_wWY3b6": {
+      "type": "section",
+      "blocks": {
+        "group_KdfK4F": {
+          "type": "group",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 32,
+            "width": "fill",
+            "custom_width": 94,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "custom",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+            "background_media": "image",
+            "video_position": "cover",
+            "background_image": "shopify://shop_images/pexels-ninosouza-3378523.jpg",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 2.5,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "hero-apparel-2",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 100,
+            "padding-block-end": 100,
+            "padding-inline-start": 40,
+            "padding-inline-end": 40
+          },
+          "blocks": {
+            "text_rCHdtr": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Wake up with purpose</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_rCHdtr"
+          ]
+        },
+        "spacer_Ggb4ny": {
+          "type": "spacer",
+          "name": "t:names.spacer",
+          "settings": {
+            "size": "pixel",
+            "percent_size": 21,
+            "pixel_size": 24,
+            "custom_mobile_size": false,
+            "size_mobile": "percent",
+            "percent_size_mobile": 26,
+            "pixel_size_mobile": 308
+          },
+          "blocks": {}
+        },
+        "group_ecwCn3": {
+          "type": "group",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 32,
+            "width": "fill",
+            "custom_width": 94,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "custom",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+            "background_media": "image",
+            "video_position": "cover",
+            "background_image": "shopify://shop_images/running.png",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 2.5,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "hero-apparel-2",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 100,
+            "padding-block-end": 100,
+            "padding-inline-start": 40,
+            "padding-inline-end": 40
+          },
+          "blocks": {
+            "text_9nUDzj": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>COMPLETE WHAT MATTERS</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_9nUDzj"
+          ]
+        },
+        "spacer_pUyDV3": {
+          "type": "spacer",
+          "name": "t:names.spacer",
+          "settings": {
+            "size": "pixel",
+            "percent_size": 21,
+            "pixel_size": 24,
+            "custom_mobile_size": false,
+            "size_mobile": "percent",
+            "percent_size_mobile": 26,
+            "pixel_size_mobile": 308
+          },
+          "blocks": {}
+        },
+        "group_ATG6gG": {
+          "type": "group",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 32,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "custom",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+            "background_media": "image",
+            "video_position": "cover",
+            "background_image": "shopify://shop_images/friends.png",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 2.5,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "hero-apparel-1",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 100,
+            "padding-block-end": 100,
+            "padding-inline-start": 40,
+            "padding-inline-end": 40
+          },
+          "blocks": {
+            "text_3YadiE": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>be present for what matters</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_3YadiE"
+          ]
+        },
+        "spacer_MTrRVV": {
+          "type": "spacer",
+          "name": "t:names.spacer",
+          "settings": {
+            "size": "pixel",
+            "percent_size": 21,
+            "pixel_size": 24,
+            "custom_mobile_size": false,
+            "size_mobile": "percent",
+            "percent_size_mobile": 26,
+            "pixel_size_mobile": 308
+          },
+          "blocks": {}
+        },
+        "group_tnBKyd": {
+          "type": "group",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 33,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "custom",
+            "custom_height": 100,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+            "background_media": "image",
+            "video_position": "cover",
+            "background_image": "shopify://shop_images/coffee.png",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 2.5,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "placeholder": "hero-apparel-1",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 100,
+            "padding-block-end": 100,
+            "padding-inline-start": 40,
+            "padding-inline-end": 40
+          },
+          "blocks": {
+            "text_WHpYft": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>BUILD HEALTHY HABITS</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_WHpYft"
+          ]
+        }
+      },
+      "block_order": [
+        "group_KdfK4F",
+        "spacer_Ggb4ny",
+        "group_ecwCn3",
+        "spacer_pUyDV3",
+        "group_ATG6gG",
+        "spacer_MTrRVV",
+        "group_tnBKyd"
+      ],
+      "custom_css": [
+        ".custom-section-content {border-radius: 24px; overflow: hidden; padding: 20px; /* space around all images */ display: flex; /* or grid */ flex-wrap: wrap; /* only if flex */ gap: 18px; /* space between images */}",
+        ".custom-section-content .group-block__media-wrapper img {border-radius: 24px; display: block;}"
+      ],
+      "name": "t:names.split_showcase",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 0,
+        "section_width": "full-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 11
+      }
+    },
+    "section_GPJgVt": {
+      "type": "section",
+      "blocks": {
+        "button_VHr9Tk": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Shop Now",
+            "link": "shopify://products/unnap",
+            "open_in_new_tab": false,
+            "style_class": "button-secondary",
+            "width": "custom",
+            "custom_width": 28,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 70
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "button_VHr9Tk"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 24,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "section_9jRewt": {
+      "type": "section",
+      "blocks": {
+        "text_EdDdr8": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h3>FAQs</h3>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "accordion_WQNcVt": {
+          "type": "accordion",
+          "name": "t:names.accordion",
+          "settings": {
+            "icon": "caret",
+            "dividers": true,
+            "type_preset": "h5",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "solid",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 18,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 10,
+            "padding-inline-end": 10
+          },
+          "blocks": {
+            "accordion_row_XjaJ9M": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "What is UNNAP?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_TeUBEF": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p><strong>UNNAP is a health routine compliance app that uses physical verification to ensure you complete important health tasks on time. </strong>UNNAP combines an iPhone app with a physical  device (the UNNAP puck) to create a system of accountability for health routines.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_TeUBEF"
+              ]
+            },
+            "accordion_row_EBeCKV": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "How does the UNNAP Device work?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_jXLyUQ": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>The UNNAP device is a small, engraved NFC device. Place it somewhere away from your bed — like the kitchen or bathroom. When the alarm rings, you must tap your phone on the UNNAP device to stop it. This physical movement helps you avoid hitting snooze and going back to sleep.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_jXLyUQ"
+              ]
+            },
+            "accordion_row_JLpcpp": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "Does UNNAP work offline?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_nkHXn7": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Yes. All settings are configured in the UNNAP app, but the alarm and NFC functionality work without an internet connection.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_nkHXn7"
+              ]
+            },
+            "accordion_row_cWCD4g": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "What do I get with UNNAP Pro?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_8QCbNi": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>UNNAP Pro gives you the full experience — everything designed to keep you accountable, motivated, and even competitive:</p><ul><li><strong>Custom alarm sounds</strong> <br/></li><li><strong>Friends page</strong> — see your friends’ streaks and support each other.<br/></li><li><strong>Groups & leaderboards</strong> — create groups with friends, family, or housemates and compete for the top spot.</li></ul><p></p><ul><li><strong>My Data </strong>— Track your wake-up times, consistency, and streak milestones to see your progress over time.</li></ul>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_8QCbNi"
+              ]
+            },
+            "accordion_row_jQ9Cha": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "Can I buy extra UNNAP Devices?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_P6NhRE": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Yes, you can purchase additional devices and connect them to your UNNAP account.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_P6NhRE"
+              ]
+            },
+            "accordion_row_a7iQNV": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "Can I customise my alarm sound?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_8AY8Xt": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Absolutely. You can choose from any of our included sounds. Custom alarms are coming soon for Pro users.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_8AY8Xt"
+              ]
+            },
+            "accordion_row_YjbqpJ": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "What happens if I lose my UNNAP Device?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_PNREek": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>You can order a replacement UNNAP device through our website. Your app will will need to be paired with the new device.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_PNREek"
+              ]
+            },
+            "accordion_row_HtwbWG": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "Is UNNAP compatible with my phone?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_f9DVAa": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>At launch, UNNAP is available <strong>exclusively for iOS</strong>. We plan to bring Android support in the future, but it’s not available yet.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_f9DVAa"
+              ]
+            },
+            "accordion_row_H4FEFw": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "How is UNNAP different from a regular alarm app?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_rziFdK": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>UNNAP blends <strong>physical action</strong> with smart alarm design. You can’t just swipe to snooze — you have to get up and tap your phone to the UNNAP device. This breaks the snooze habit and helps you own your mornings.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_rziFdK"
+              ]
+            },
+            "accordion_row_NwedJF": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_dash_row",
+              "settings": {
+                "heading": "Where does the name “UNNAP” come from?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_ykgLxx": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>It’s a nod to breaking free from oversleeping — a reminder to stop “napping” on your mornings and start living them.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_ykgLxx"
+              ]
+            }
+          },
+          "block_order": [
+            "accordion_row_XjaJ9M",
+            "accordion_row_EBeCKV",
+            "accordion_row_JLpcpp",
+            "accordion_row_cWCD4g",
+            "accordion_row_jQ9Cha",
+            "accordion_row_a7iQNV",
+            "accordion_row_YjbqpJ",
+            "accordion_row_HtwbWG",
+            "accordion_row_H4FEFw",
+            "accordion_row_NwedJF"
+          ]
+        }
+      },
+      "block_order": [
+        "text_EdDdr8",
+        "accordion_WQNcVt"
+      ],
+      "name": "t:names.faq_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 75,
+        "padding-block-end": 48
+      }
+    },
+    "section_ab7Dq3": {
+      "type": "section",
+      "blocks": {
+        "spacer_At96nM": {
+          "type": "spacer",
+          "name": "t:names.spacer",
+          "settings": {
+            "size": "pixel",
+            "percent_size": 9,
+            "pixel_size": 32,
+            "custom_mobile_size": false,
+            "size_mobile": "percent",
+            "percent_size_mobile": 100,
+            "pixel_size_mobile": 120
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "spacer_At96nM"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-de393618-fc62-4265-8343-4f28e99c20cd",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    }
+  },
+  "order": [
+    "hero_RkimKJ",
+    "custom_liquid_QCbecE",
+    "section_eMqQD7",
+    "section_8FaHQ8",
+    "media_with_content_xkQNJp",
+    "ss_modal_popup_3_CVrNww",
+    "section_jLCVXp",
+    "section_JGEdHC",
+    "section_wWY3b6",
+    "section_GPJgVt",
+    "section_9jRewt",
+    "section_ab7Dq3"
+  ]
+}
