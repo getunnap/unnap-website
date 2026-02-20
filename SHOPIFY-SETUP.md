@@ -20,6 +20,37 @@ This guide walks you through connecting your **existing Shopify website** to thi
 
 Use **Cursor’s integrated terminal** (View → Terminal) or Mac Terminal; run both from the `UNNAP website` folder.
 
+---
+
+## Push to GitHub (separate from app / other projects)
+
+Keep the UNNAP **website** (this theme) in its own repo, separate from any app or other code.
+
+1. **Create a new repo on GitHub**  
+   Go to [github.com/new](https://github.com/new).  
+   - **Repository name:** e.g. `unnap-website` or `unnap-shopify-theme`  
+   - **Visibility:** Private or Public (your choice)  
+   - **Do not** add a README, .gitignore, or license – this folder already has content.  
+   Click **Create repository**.
+
+2. **Connect this folder and push**  
+   GitHub will show a “push an existing repository” snippet. From the `UNNAP website` folder run (replace `YOUR-USERNAME` and `YOUR-REPO-NAME` with yours):
+
+   ```bash
+   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
+   git push -u origin main
+   ```
+
+   Or use the script (same folder):
+
+   ```bash
+   ./push-to-github.sh https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
+   ```
+
+   After that, this project is the only thing in that repo – separate from any app or other repos.
+
+---
+
 ### "Shop is currently unavailable" or wrong store
 
 Your live site is **unnap.com**, but Shopify’s backend uses a **permanent** `.myshopify.com` address, which might not be `unnap.myshopify.com`.
