@@ -1,0 +1,137 @@
+{
+  "sections": {
+    "unnap_header": {
+      "type": "unnap-landing-header",
+      "settings": {
+        "product_url": "/products/unnap"
+      }
+    },
+    "unnap_hero": {
+      "type": "unnap-landing-hero",
+      "settings": {
+        "product_url": "/products/unnap"
+      }
+    },
+    "unnap_problem": {
+      "type": "unnap-landing-problem",
+      "settings": {}
+    },
+    "unnap_solution": {
+      "type": "unnap-landing-solution",
+      "settings": {
+        "product_url": "/products/unnap"
+      }
+    },
+    "unnap_competition": {
+      "type": "unnap-landing-competition",
+      "settings": {}
+    },
+    "unnap_technology": {
+      "type": "unnap-landing-technology",
+      "settings": {}
+    },
+    "unnap_integrations": {
+      "type": "unnap-landing-integrations",
+      "settings": {},
+      "blocks": {
+        "strava": {
+          "type": "integration",
+          "settings": { "name": "Strava", "category": "Fitness", "logo_asset": "strava" }
+        },
+        "apple_health": {
+          "type": "integration",
+          "settings": { "name": "Apple Health", "category": "Health Data", "logo_asset": "apple-health" }
+        },
+        "whoop": {
+          "type": "integration",
+          "settings": { "name": "Whoop", "category": "Performance", "logo_asset": "whoop" }
+        },
+        "oura": {
+          "type": "integration",
+          "settings": { "name": "Oura", "category": "Sleep Tracking", "logo_asset": "oura-v3" }
+        },
+        "garmin": {
+          "type": "integration",
+          "settings": { "name": "Garmin", "category": "Wearables", "logo_asset": "garmin-v3" }
+        },
+        "philips_hue": {
+          "type": "integration",
+          "settings": { "name": "Philips Hue", "category": "Smart Lighting", "logo_asset": "philips-hue" }
+        },
+        "matter": {
+          "type": "integration",
+          "settings": { "name": "Matter", "category": "Smart Home", "logo_asset": "matter-v3" }
+        },
+        "fitbit": {
+          "type": "integration",
+          "settings": { "name": "FitBit", "category": "Wearable", "logo_asset": "fitbit" }
+        }
+      },
+      "block_order": ["strava", "apple_health", "whoop", "oura", "garmin", "philips_hue", "matter", "fitbit"]
+    },
+    "unnap_faq": {
+      "type": "unnap-landing-faq",
+      "settings": {},
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How does the UNNAP 2.0 alarm dismissal work?",
+            "answer": "<p>UNNAP uses Near Field Communication (NFC) technology. You place an UNNAP magnet in a location away from your bed (like your bathroom or kitchen). When your alarm goes off, the only way to dismiss it is to physically get up and tap your phone to the UNNAP magnet. This ensures you're out of bed and moving, not just hitting snooze.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "What if I don't have an NFC-enabled phone?",
+            "answer": "<p>No problem. UNNAP also supports barcode scanning as an alternative. You can print a barcode and place it anywhere in your home. The alarm can only be dismissed by scanning that specific barcode with your phone's camera.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "How does the competition feature work?",
+            "answer": "<p>You can create or join groups with friends, family, or colleagues. Every morning, your wake-up performance is tracked and scored based on consistency, wake time, and streak. Live leaderboards show rankings, and you can compete in 1v1 challenges or group competitions.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "What integrations are supported?",
+            "answer": "<p>UNNAP integrates with major fitness and health tracking platforms including Strava, Apple Health, Whoop, Oura, and Garmin. We also support smart home devices like Philips Hue and Matter.</p>"
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "How does Smart Wake Technology work?",
+            "answer": "<p>Set a 30-minute wake window instead of a fixed time. UNNAP analyzes your sleep cycles using data from your connected wearables and triggers the alarm during light sleep within that window. This results in more natural, easier waking.</p>"
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5"]
+    },
+    "unnap_final_cta": {
+      "type": "unnap-landing-final-cta",
+      "settings": {
+        "product_url": "/products/unnap"
+      }
+    },
+    "unnap_footer": {
+      "type": "unnap-landing-footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "unnap_header",
+    "unnap_hero",
+    "unnap_problem",
+    "unnap_solution",
+    "unnap_competition",
+    "unnap_technology",
+    "unnap_integrations",
+    "unnap_faq",
+    "unnap_final_cta",
+    "unnap_footer"
+  ]
+}

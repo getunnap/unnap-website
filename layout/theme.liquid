@@ -54,9 +54,11 @@ src="https://www.facebook.com/tr?id=818324194227215&ev=PageView&noscript=1"
 
   <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
     {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %}
+    {% unless template.name == 'page' and template.suffix == 'landing-test' %}
     <div id="header-group">
       {% sections 'header-group' %}
     </div>
+    {% endunless %}
 
     <script
       src="{{ 'critical.js' | asset_url }}"
@@ -76,12 +78,17 @@ src="https://www.facebook.com/tr?id=818324194227215&ev=PageView&noscript=1"
       {{ content_for_layout }}
     </main>
 
+    {% unless template.name == 'page' and template.suffix == 'landing-test' %}
     {% sections 'footer-group' %}
+    {% endunless %}
 
     {% render 'search-modal' %}
 
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
+    {% endif %}
+    {% if template.name == 'page' and template.suffix == 'landing-test' %}
+      {% render 'unnap-animations' %}
     {% endif %}
   </body>
 </html>

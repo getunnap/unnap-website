@@ -1,0 +1,227 @@
+{% comment %}
+  UNNAP Landing Hero - "Win Your Morning"
+  Performance System hero with stats and CTA
+{% endcomment %}
+{%- assign product_url = section.settings.product_url | default: '/products/unnap' -%}
+{%- if product_url == '' -%}
+  {%- assign product_url = '/products/unnap' -%}
+{%- endif -%}
+
+<style>
+  .unnap-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+  }
+  .unnap-hero__inner {
+    position: relative;
+    z-index: 10;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 7rem 1.5rem 5rem;
+    width: 100%;
+  }
+  .unnap-hero__grid {
+    display: grid;
+    gap: 4rem;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .unnap-hero__grid { grid-template-columns: 1fr 1fr; }
+  }
+  .unnap-hero__kicker {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+  .unnap-hero__title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 1rem 0 0.5rem;
+  }
+  .unnap-hero__title .line2 { display: block; }
+  .unnap-hero__sub {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: rgba(255,255,255,0.6);
+    max-width: 36rem;
+    line-height: 1.6;
+    margin: 0 0 1.5rem;
+  }
+  .unnap-hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+  }
+  .unnap-hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.2s;
+  }
+  .unnap-hero__btn:hover { opacity: 0.9; }
+  .unnap-hero__btn--primary {
+    background: #fff;
+    color: #000;
+  }
+  .unnap-hero__btn--secondary {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+  .unnap-hero__btn--secondary:hover {
+    background: #fff;
+    color: #000;
+  }
+  .unnap-hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .unnap-hero__stat-value {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  .unnap-hero__stat-label {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.4);
+  }
+  .unnap-hero__media {
+    position: relative;
+  }
+  .unnap-hero__media-box {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background: rgba(255,255,255,0.05);
+  }
+  .unnap-hero__media-box img,
+  .unnap-hero__media-box video,
+  .unnap-hero__media-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+  .unnap-hero__media-box video {
+    background: #0a0a0a;
+  }
+  .unnap-hero__placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 1rem;
+  }
+  .unnap-hero__placeholder-label { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .unnap-hero__placeholder-hint { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+</style>
+
+<section class="unnap-hero" id="hero">
+  <div class="unnap-hero__inner">
+    <div class="unnap-hero__grid">
+      <div>
+        <span class="unnap-hero__kicker unnap-animate" data-delay="0">Performance System</span>
+        <h1 class="unnap-hero__title unnap-animate" data-delay="0.1">
+          Win Your
+          <span class="line2">Morning.</span>
+        </h1>
+        <p class="unnap-hero__sub unnap-animate" data-delay="0.2">
+          Snoozing ends here. UNNAP is the physical system that makes your mornings non-negotiable. Track, compete, and build the discipline that separates winners from everyone else.
+        </p>
+        <div class="unnap-hero__actions unnap-animate" data-delay="0.3">
+          <a href="{{ shop.url }}/products/unnap" class="unnap-hero__btn unnap-hero__btn--primary">UNNAP 2.0</a>
+          <a href="#how-it-works" class="unnap-hero__btn unnap-hero__btn--secondary">Learn More</a>
+        </div>
+        <div class="unnap-hero__stats unnap-animate" data-delay="0.4">
+          <div>
+            <div class="unnap-hero__stat-value">6:20AM</div>
+            <div class="unnap-hero__stat-label">Avg Wake Time</div>
+          </div>
+          <div>
+            <div class="unnap-hero__stat-value">94%</div>
+            <div class="unnap-hero__stat-label">Consistency</div>
+          </div>
+          <div>
+            <div class="unnap-hero__stat-value">0%</div>
+            <div class="unnap-hero__stat-label">Snooze</div>
+          </div>
+        </div>
+      </div>
+      <div class="unnap-hero__media unnap-animate unnap-animate--scale" data-delay="0.3">
+        <div class="unnap-hero__media-box">
+          <video
+            class="unnap-hero__media-img"
+            src="https://videos.files.wordpress.com/SvvTA4NB/magnet-animation.110.mp4"
+            poster="{{ 'unnap-hero-app.png' | asset_url }}"
+            width="800"
+            height="800"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            aria-label="UNNAP magnet animation"
+          ></video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "UNNAP Landing Hero",
+  "tag": "section",
+  "class": "section-unnap-hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_url",
+      "label": "Product URL path",
+      "default": "/products/unnap"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image (app screenshot)"
+    },
+    {
+      "type": "url",
+      "id": "hero_image_url",
+      "label": "Hero image URL (if no image uploaded)"
+    }
+  ],
+  "presets": [
+    { "name": "UNNAP Landing Hero", "category": "UNNAP" }
+  ]
+}
+{% endschema %}

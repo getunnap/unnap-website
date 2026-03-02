@@ -1,0 +1,150 @@
+{% comment %}
+  UNNAP Landing - Technology + Data
+  4 cards: Smart Wake, Alarm Control, Performance Tracking, Accountability
+{% endcomment %}
+
+<style>
+  .unnap-tech { padding: 4rem 1rem 6rem; background: #000; color: #fff; }
+  @media (min-width: 768px) { .unnap-tech { padding: 6rem 1.5rem; } }
+  .unnap-tech__container { max-width: 1280px; margin: 0 auto; }
+  .unnap-tech__header { text-align: center; margin-bottom: 3rem; }
+  @media (min-width: 768px) { .unnap-tech__header { margin-bottom: 4rem; } }
+  .unnap-tech__kicker {
+    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-bottom: 0.75rem;
+  }
+  @media (min-width: 768px) { .unnap-tech__kicker { font-size: 0.875rem; } }
+  .unnap-tech__title {
+    font-size: clamp(1.875rem, 4vw, 3.75rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+  .unnap-tech__grid {
+    display: grid;
+    gap: 1rem;
+  }
+  @media (min-width: 1024px) { .unnap-tech__grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
+  .unnap-tech__card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .unnap-tech__card:hover { border-color: rgba(255,255,255,0.2); }
+  @media (min-width: 768px) { .unnap-tech__card { padding: 2rem; } }
+  .unnap-tech__card-tag {
+    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-bottom: 0.75rem;
+  }
+  .unnap-tech__card-title {
+    font-size: clamp(1.25rem, 2vw, 1.875rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+  }
+  .unnap-tech__card-desc {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  @media (min-width: 768px) { .unnap-tech__card-desc { font-size: 1rem; } }
+  .unnap-tech__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .unnap-tech__stat {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 1rem;
+  }
+  .unnap-tech__stat-label {
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+  .unnap-tech__stat-value { font-size: 1.125rem; font-weight: 600; }
+  @media (min-width: 768px) { .unnap-tech__stat-value { font-size: 1.25rem; } }
+  .unnap-tech__card.unnap-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  .unnap-tech__card.unnap-animate.unnap-animate--in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .unnap-tech__grid .unnap-tech__card.unnap-animate--in:nth-child(1) { transition-delay: 0.05s; }
+  .unnap-tech__grid .unnap-tech__card.unnap-animate--in:nth-child(2) { transition-delay: 0.1s; }
+  .unnap-tech__grid .unnap-tech__card.unnap-animate--in:nth-child(3) { transition-delay: 0.15s; }
+  .unnap-tech__grid .unnap-tech__card.unnap-animate--in:nth-child(4) { transition-delay: 0.2s; }
+</style>
+
+<section class="unnap-tech" id="features">
+  <div class="unnap-tech__container">
+    <header class="unnap-tech__header">
+      <div class="unnap-tech__kicker unnap-animate" data-delay="0">Technology + Data</div>
+      <h2 class="unnap-tech__title unnap-animate" data-delay="0.1">Built for performance,<br>measured by data.</h2>
+    </header>
+    <div class="unnap-tech__grid">
+      <div class="unnap-tech__card unnap-animate">
+        <div class="unnap-tech__card-tag">Smart Wake Technology</div>
+        <h3 class="unnap-tech__card-title">Optimized sleep cycle detection</h3>
+        <p class="unnap-tech__card-desc">Set a 30-minute wake window. UNNAP analyzes your sleep stages and triggers the alarm during light sleep for easier, more natural waking.</p>
+        <div class="unnap-tech__stats">
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Wake Window</div><div class="unnap-tech__stat-value">30 min</div></div>
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Detection Accuracy</div><div class="unnap-tech__stat-value">95%+</div></div>
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Light Sleep Alert</div><div class="unnap-tech__stat-value">Auto</div></div>
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Integrations</div><div class="unnap-tech__stat-value">Apple, Whoop, Oura</div></div>
+        </div>
+      </div>
+      <div class="unnap-tech__card unnap-animate">
+        <div class="unnap-tech__card-tag">Alarm Control</div>
+        <h3 class="unnap-tech__card-title">No escape. No excuses.</h3>
+        <p class="unnap-tech__card-desc">Extra loud volume (0-100%, louder than iOS), custom sounds, and alarm lock periods that prevent last-minute changes. Once locked, no negotiations.</p>
+        <div class="unnap-tech__stats">
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Volume Range</div><div class="unnap-tech__stat-value">0-100%</div></div>
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Lock Window</div><div class="unnap-tech__stat-value">12hr max</div></div>
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Disable Method</div><div class="unnap-tech__stat-value">Magnet/Barcode</div></div>
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Snooze</div><div class="unnap-tech__stat-value">Disabled</div></div>
+        </div>
+      </div>
+      <div class="unnap-tech__card unnap-animate">
+        <div class="unnap-tech__card-tag">Performance Tracking</div>
+        <h3 class="unnap-tech__card-title">Every metric that matters.</h3>
+        <p class="unnap-tech__card-desc">Sleep cycles, consistency scores, streak tracking, wake time averages, and sleep debt monitoring. All synced with your wearables in real-time.</p>
+        <div class="unnap-tech__stats">
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Daily Metrics</div><div class="unnap-tech__stat-value">12+</div></div>
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Data Sync</div><div class="unnap-tech__stat-value">Real-time</div></div>
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">History</div><div class="unnap-tech__stat-value">Unlimited</div></div>
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Score System</div><div class="unnap-tech__stat-value">0-100 pts</div></div>
+        </div>
+      </div>
+      <div class="unnap-tech__card unnap-animate">
+        <div class="unnap-tech__card-tag">Accountability System</div>
+        <h3 class="unnap-tech__card-title">Measurable. Visible. Competitive.</h3>
+        <p class="unnap-tech__card-desc">Your performance is tracked, compared, and displayed. Compete in challenges, climb leaderboards, and build streaks that define your identity.</p>
+        <div class="unnap-tech__stats">
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Challenge Modes</div><div class="unnap-tech__stat-value">1v1 & Groups</div></div>
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Rankings</div><div class="unnap-tech__stat-value">Live</div></div>
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Longest Streak</div><div class="unnap-tech__stat-value">500+ days</div></div>
+          <div class="unnap-tech__stat"><div class="unnap-tech__stat-label">Leaderboards</div><div class="unnap-tech__stat-value">Global</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "UNNAP Landing Technology",
+  "tag": "section",
+  "class": "section-unnap-technology",
+  "settings": [],
+  "presets": [{ "name": "UNNAP Landing Technology", "category": "UNNAP" }]
+}
+{% endschema %}

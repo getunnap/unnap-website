@@ -1,0 +1,97 @@
+{% comment %}
+  UNNAP Landing - The Problem
+  White background, 3 stats (Consequence, Visibility, Competition)
+{% endcomment %}
+
+<style>
+  .unnap-problem {
+    padding: 8rem 1.5rem;
+    background: #fff;
+    color: #000;
+  }
+  .unnap-problem__container { max-width: 1280px; margin: 0 auto; }
+  .unnap-problem__header { max-width: 48rem; margin-bottom: 5rem; }
+  .unnap-problem__kicker {
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.4);
+    margin-bottom: 1.5rem;
+  }
+  .unnap-problem__title {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 2rem;
+  }
+  .unnap-problem__lead {
+    font-size: 1.25rem;
+    color: rgba(0,0,0,0.6);
+    line-height: 1.6;
+  }
+  .unnap-problem__grid {
+    display: grid;
+    gap: 1px;
+    background: rgba(0,0,0,0.05);
+  }
+  @media (min-width: 768px) {
+    .unnap-problem__grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .unnap-problem__card {
+    background: #fff;
+    padding: 3rem;
+  }
+  .unnap-problem__card-value {
+    font-size: 3.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .unnap-problem__card-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+  }
+  .unnap-problem__card-desc {
+    font-size: 0.875rem;
+    color: rgba(0,0,0,0.5);
+  }
+</style>
+
+<section class="unnap-problem" id="the-problem">
+  <div class="unnap-problem__container">
+    <div class="unnap-problem__header">
+      <div class="unnap-problem__kicker unnap-animate" data-delay="0">The Problem</div>
+      <h2 class="unnap-problem__title unnap-animate" data-delay="0.1">Most people don't lack ability.<br>They lack accountability.</h2>
+      <p class="unnap-problem__lead unnap-animate" data-delay="0.2">
+        Without consequences, visibility, or competition, waking up early becomes optional. UNNAP makes it measurable.
+      </p>
+    </div>
+    <div class="unnap-problem__grid">
+      <div class="unnap-problem__card unnap-animate" data-delay="0.3">
+        <div class="unnap-problem__card-value">100%</div>
+        <div class="unnap-problem__card-title">Consequence</div>
+        <div class="unnap-problem__card-desc">Hitting snooze costs nothing</div>
+      </div>
+      <div class="unnap-problem__card unnap-animate" data-delay="0.4">
+        <div class="unnap-problem__card-value">100%</div>
+        <div class="unnap-problem__card-title">Visibility</div>
+        <div class="unnap-problem__card-desc">Your effort is invisible</div>
+      </div>
+      <div class="unnap-problem__card unnap-animate" data-delay="0.5">
+        <div class="unnap-problem__card-value">100%</div>
+        <div class="unnap-problem__card-title">Competition</div>
+        <div class="unnap-problem__card-desc">No one to push you</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "UNNAP Landing Problem",
+  "tag": "section",
+  "class": "section-unnap-problem",
+  "settings": [],
+  "presets": [{ "name": "UNNAP Landing Problem", "category": "UNNAP" }]
+}
+{% endschema %}

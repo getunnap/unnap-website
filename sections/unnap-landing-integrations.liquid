@@ -1,0 +1,161 @@
+{% comment %}
+  UNNAP Landing - Integrations
+  Grid of integration logos (Strava, Apple Health, Whoop, Oura, Garmin, Philips Hue, Matter)
+{% endcomment %}
+
+<style>
+  .unnap-int { padding: 8rem 1.5rem; background: #fff; color: #000; }
+  .unnap-int__container { max-width: 1280px; margin: 0 auto; }
+  .unnap-int__header { text-align: center; margin-bottom: 5rem; }
+  .unnap-int__kicker {
+    font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(0,0,0,0.4); margin-bottom: 1.5rem;
+  }
+  .unnap-int__title {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .unnap-int__lead {
+    font-size: 1.25rem;
+    color: rgba(0,0,0,0.6);
+    line-height: 1.6;
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+  .unnap-int__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  @media (min-width: 768px) { .unnap-int__grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1024px) { .unnap-int__grid { grid-template-columns: repeat(4, 1fr); } }
+  .unnap-int__card {
+    background: #fff;
+    border: 2px solid rgba(0,0,0,0.05);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 140px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .unnap-int__card:hover {
+    border-color: rgba(0,0,0,0.2);
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+  }
+  .unnap-int__card.unnap-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, border-color 0.3s, box-shadow 0.3s;
+  }
+  .unnap-int__card.unnap-animate.unnap-animate--in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .unnap-int__grid .unnap-int__card.unnap-animate--in:nth-child(1) { transition-delay: 0.05s; }
+  .unnap-int__grid .unnap-int__card.unnap-animate--in:nth-child(2) { transition-delay: 0.1s; }
+  .unnap-int__grid .unnap-int__card.unnap-animate--in:nth-child(3) { transition-delay: 0.15s; }
+  .unnap-int__grid .unnap-int__card.unnap-animate--in:nth-child(4) { transition-delay: 0.2s; }
+  .unnap-int__grid .unnap-int__card.unnap-animate--in:nth-child(5) { transition-delay: 0.25s; }
+  .unnap-int__grid .unnap-int__card.unnap-animate--in:nth-child(6) { transition-delay: 0.3s; }
+  .unnap-int__grid .unnap-int__card.unnap-animate--in:nth-child(7) { transition-delay: 0.35s; }
+  .unnap-int__grid .unnap-int__card.unnap-animate--in:nth-child(8) { transition-delay: 0.4s; }
+  .unnap-int__grid .unnap-int__card.unnap-animate--in:nth-child(9) { transition-delay: 0.45s; }
+  .unnap-int__grid .unnap-int__card.unnap-animate--in:nth-child(10) { transition-delay: 0.5s; }
+  .unnap-int__card-logo {
+    height: 3rem;
+    max-width: 8rem;
+    margin-bottom: 0.75rem;
+    object-fit: contain;
+  }
+  .unnap-int__card-cat { font-size: 0.75rem; color: rgba(0,0,0,0.4); text-transform: uppercase; letter-spacing: 0.05em; }
+  .unnap-int__footer { text-align: center; margin-top: 4rem; }
+  .unnap-int__footer p { font-size: 1.125rem; color: rgba(0,0,0,0.6); }
+  .unnap-int__footer strong { color: #000; }
+</style>
+
+<section class="unnap-int" id="integrations">
+  <div class="unnap-int__container">
+    <header class="unnap-int__header">
+      <div class="unnap-int__kicker unnap-animate" data-delay="0">Integrations</div>
+      <h2 class="unnap-int__title unnap-animate" data-delay="0.1">Works with the tools you already use.</h2>
+      <p class="unnap-int__lead unnap-animate" data-delay="0.2">
+        UNNAP seamlessly connects with your favorite fitness trackers, health platforms, and smart home devices for a complete performance ecosystem.
+      </p>
+    </header>
+    <div class="unnap-int__grid">
+      {% for block in section.blocks %}
+        <div class="unnap-int__card unnap-animate" {{ block.shopify_attributes }}>
+          {% if block.settings.logo != blank %}
+            <img src="{{ block.settings.logo | image_url: width: 160 }}" alt="{{ block.settings.name | default: 'Integration' }}" class="unnap-int__card-logo" loading="lazy" width="80" height="48">
+          {% elsif block.settings.logo_url != blank %}
+            <img src="{{ block.settings.logo_url }}" alt="{{ block.settings.name | default: 'Integration' }}" class="unnap-int__card-logo" loading="lazy" width="80" height="48" onerror="this.style.display='none'">
+          {% elsif block.settings.logo_asset != blank %}
+            {% assign asset_file = 'unnap-int-' | append: block.settings.logo_asset | append: '.png' %}
+            <img src="{{ asset_file | asset_url }}?v=2" alt="{{ block.settings.name }}" class="unnap-int__card-logo" loading="lazy" width="80" height="48">
+          {% endif %}
+          <div class="unnap-int__card-cat">{{ block.settings.category | default: 'Integration' }}</div>
+        </div>
+      {% endfor %}
+      {% if section.blocks.size == 0 %}
+        {% assign defaults = "strava,Fitness|apple-health,Health Data|whoop,Performance|oura-v3,Sleep Tracking|garmin-v3,Wearables|philips-hue,Smart Lighting|matter-v3,Smart Home|fitbit,Wearable" | split: "|" %}
+        {% for item in defaults %}
+          {% assign parts = item | split: "," %}
+          <div class="unnap-int__card unnap-animate">
+            {% assign asset_file = 'unnap-int-' | append: parts[0] | append: '.png' %}
+            <img src="{{ asset_file | asset_url }}?v=2" alt="Integration" class="unnap-int__card-logo" loading="lazy" width="80" height="48">
+            <div class="unnap-int__card-cat">{{ parts[1] }}</div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <div class="unnap-int__footer">
+      <p>More integrations coming soon. <strong>Request yours →</strong></p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "UNNAP Integrations",
+  "tag": "section",
+  "class": "section-unnap-integrations",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "integration",
+      "name": "Integration",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "text", "id": "category", "label": "Category" },
+        { "type": "image_picker", "id": "logo", "label": "Logo image" },
+        { "type": "url", "id": "logo_url", "label": "Logo URL (if no image uploaded)" },
+        { "type": "text", "id": "logo_asset", "label": "Fallback logo asset", "info": "e.g. strava, apple-health, whoop, oura, garmin, philips-hue, matter, fitbit" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "UNNAP Integrations",
+      "category": "UNNAP",
+      "blocks": [
+        { "type": "integration", "settings": { "name": "Strava", "category": "Fitness", "logo_asset": "strava" } },
+        { "type": "integration", "settings": { "name": "Apple Health", "category": "Health Data", "logo_asset": "apple-health" } },
+        { "type": "integration", "settings": { "name": "Whoop", "category": "Performance", "logo_asset": "whoop" } },
+        { "type": "integration", "settings": { "name": "Oura", "category": "Sleep Tracking", "logo_asset": "oura-v3" } },
+        { "type": "integration", "settings": { "name": "Garmin", "category": "Wearables", "logo_asset": "garmin-v3" } },
+        { "type": "integration", "settings": { "name": "Philips Hue", "category": "Smart Lighting", "logo_asset": "philips-hue" } },
+        { "type": "integration", "settings": { "name": "Matter", "category": "Smart Home", "logo_asset": "matter-v3" } },
+        { "type": "integration", "settings": { "name": "FitBit", "category": "Wearable", "logo_asset": "fitbit" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

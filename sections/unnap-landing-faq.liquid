@@ -1,0 +1,165 @@
+{% comment %}
+  UNNAP Landing - FAQ accordion
+{% endcomment %}
+
+<style>
+  .unnap-faq { padding: 8rem 1.5rem; background: #000; color: #fff; }
+  .unnap-faq__container { max-width: 56rem; margin: 0 auto; }
+  .unnap-faq__header { text-align: center; margin-bottom: 4rem; }
+  .unnap-faq__kicker {
+    font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-bottom: 1.5rem;
+  }
+  .unnap-faq__title {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+  .unnap-faq__list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .unnap-faq__item {
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.02);
+    border-radius: 0;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .unnap-faq__item:hover { border-color: rgba(255,255,255,0.2); }
+  .unnap-faq__q {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  .unnap-faq__q::-webkit-details-marker { display: none; }
+  .unnap-faq__icon {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    position: relative;
+  }
+  .unnap-faq__icon::before,
+  .unnap-faq__icon::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    transition: transform 0.2s;
+  }
+  .unnap-faq__icon::before { width: 100%; height: 2px; top: 50%; left: 0; margin-top: -1px; }
+  .unnap-faq__icon::after { width: 2px; height: 100%; left: 50%; top: 0; margin-left: -1px; }
+  .unnap-faq__item[open] .unnap-faq__icon::after { transform: rotate(90deg); }
+  .unnap-faq__a {
+    padding: 0 2rem 1.5rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    padding-top: 0;
+  }
+  .unnap-faq__footer { margin-top: 4rem; text-align: center; }
+  .unnap-faq__footer p { color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+  .unnap-faq__footer a { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+  .unnap-faq__footer a:hover { color: rgba(255,255,255,0.8); }
+  .unnap-faq__item.unnap-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, border-color 0.2s;
+  }
+  .unnap-faq__item.unnap-animate.unnap-animate--in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .unnap-faq__list .unnap-faq__item.unnap-animate--in:nth-child(1) { transition-delay: 0.05s; }
+  .unnap-faq__list .unnap-faq__item.unnap-animate--in:nth-child(2) { transition-delay: 0.1s; }
+  .unnap-faq__list .unnap-faq__item.unnap-animate--in:nth-child(3) { transition-delay: 0.15s; }
+  .unnap-faq__list .unnap-faq__item.unnap-animate--in:nth-child(4) { transition-delay: 0.2s; }
+  .unnap-faq__list .unnap-faq__item.unnap-animate--in:nth-child(5) { transition-delay: 0.25s; }
+  .unnap-faq__list .unnap-faq__item.unnap-animate--in:nth-child(6) { transition-delay: 0.3s; }
+</style>
+
+<section class="unnap-faq" id="faq">
+  <div class="unnap-faq__container">
+    <header class="unnap-faq__header">
+      <div class="unnap-faq__kicker unnap-animate" data-delay="0">Frequently Asked Questions</div>
+      <h2 class="unnap-faq__title unnap-animate" data-delay="0.1">Everything you need to know.</h2>
+    </header>
+    <div class="unnap-faq__list">
+      {% for block in section.blocks %}
+        <details class="unnap-faq__item unnap-animate" {{ block.shopify_attributes }}>
+          <summary class="unnap-faq__q">
+            <span>{{ block.settings.question }}</span>
+            <span class="unnap-faq__icon" aria-hidden="true"></span>
+          </summary>
+          <div class="unnap-faq__a">{{ block.settings.answer }}</div>
+        </details>
+      {% endfor %}
+      {% if section.blocks.size == 0 %}
+        {% comment %} Default FAQ items if no blocks {% endcomment %}
+        <details class="unnap-faq__item unnap-animate">
+          <summary class="unnap-faq__q"><span>How does the UNNAP alarm dismissal work?</span><span class="unnap-faq__icon"></span></summary>
+          <div class="unnap-faq__a">UNNAP uses NFC technology. You place an UNNAP magnet away from your bed. When your alarm goes off, the only way to dismiss it is to physically get up and tap your phone to the magnet.</div>
+        </details>
+        <details class="unnap-faq__item unnap-animate">
+          <summary class="unnap-faq__q"><span>What if I don't have an NFC-enabled phone?</span><span class="unnap-faq__icon"></span></summary>
+          <div class="unnap-faq__a">UNNAP also supports barcode scanning. You can print a barcode and place it anywhere in your home. The alarm can only be dismissed by scanning that barcode with your phone's camera.</div>
+        </details>
+        <details class="unnap-faq__item unnap-animate">
+          <summary class="unnap-faq__q"><span>How does the competition feature work?</span><span class="unnap-faq__icon"></span></summary>
+          <div class="unnap-faq__a">You can create or join groups with friends. Your wake-up performance is tracked and scored. Live leaderboards show rankings, and you can compete in 1v1 challenges or group competitions.</div>
+        </details>
+        <details class="unnap-faq__item unnap-animate">
+          <summary class="unnap-faq__q"><span>What integrations are supported?</span><span class="unnap-faq__icon"></span></summary>
+          <div class="unnap-faq__a">UNNAP integrates with Strava, Apple Health, Whoop, Oura, Garmin, Philips Hue, and Matter for a complete performance ecosystem.</div>
+        </details>
+        <details class="unnap-faq__item unnap-animate">
+          <summary class="unnap-faq__q"><span>How does Smart Wake Technology work?</span><span class="unnap-faq__icon"></span></summary>
+          <div class="unnap-faq__a">Set a 30-minute wake window. UNNAP analyzes your sleep cycles using data from connected wearables and triggers the alarm during light sleep for more natural waking.</div>
+        </details>
+      {% endif %}
+    </div>
+    <div class="unnap-faq__footer">
+      <p>Still have questions?</p>
+      <a href="mailto:info@unnap.com">Get in touch with our team</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "UNNAP FAQ",
+  "tag": "section",
+  "class": "section-unnap-faq",
+  "settings": [
+    { "type": "url", "id": "contact_url", "label": "Contact page URL" }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ item",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question" },
+        { "type": "html", "id": "answer", "label": "Answer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "UNNAP FAQ",
+      "category": "UNNAP",
+      "blocks": [
+        { "type": "faq", "settings": { "question": "How does the UNNAP 2.0 alarm dismissal work?", "answer": "<p>UNNAP uses Near Field Communication (NFC) technology. You place an UNNAP magnet in a location away from your bed. When your alarm goes off, the only way to dismiss it is to physically get up and tap your phone to the UNNAP magnet.</p>" } },
+        { "type": "faq", "settings": { "question": "What if I don't have an NFC-enabled phone?", "answer": "<p>UNNAP also supports barcode scanning. You can print a barcode and place it anywhere in your home. The alarm can only be dismissed by scanning that barcode with your phone's camera.</p>" } },
+        { "type": "faq", "settings": { "question": "How does the competition feature work?", "answer": "<p>You can create or join groups with friends. Your wake-up performance is tracked and scored. Live leaderboards show rankings, and you can compete in 1v1 challenges or group competitions.</p>" } },
+        { "type": "faq", "settings": { "question": "What integrations are supported?", "answer": "<p>UNNAP integrates with Strava, Apple Health, Whoop, Oura, Garmin, Philips Hue, and Matter.</p>" } },
+        { "type": "faq", "settings": { "question": "How does Smart Wake Technology work?", "answer": "<p>Set a 30-minute wake window. UNNAP analyzes your sleep cycles using data from your connected wearables and triggers the alarm during light sleep within that window.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

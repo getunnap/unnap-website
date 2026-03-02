@@ -1,0 +1,118 @@
+{% comment %}
+  UNNAP Landing - Final CTA "Start building tomorrow"
+{% endcomment %}
+{%- assign product_url = section.settings.product_url | default: '/products/unnap' -%}
+{%- if product_url == '' -%}{%- assign product_url = '/products/unnap' -%}{%- endif -%}
+{%- assign app_store_url = section.settings.app_store_url | default: 'https://apps.apple.com/gb/app/unnap-loud-alarm-track-sleep/id6753593182' -%}
+
+<style>
+  .unnap-cta { padding: 8rem 1.5rem; background: #fff; color: #000; }
+  .unnap-cta__container { max-width: 56rem; margin: 0 auto; text-align: center; }
+  .unnap-cta__kicker {
+    font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(0,0,0,0.4); margin-bottom: 1.5rem;
+  }
+  .unnap-cta__title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+  }
+  .unnap-cta__lead {
+    font-size: 1.25rem;
+    color: rgba(0,0,0,0.6);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .unnap-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+  }
+  .unnap-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .unnap-cta__btn:hover { opacity: 0.9; }
+  .unnap-cta__btn--primary { background: #000; color: #fff; }
+  .unnap-cta__btn--secondary { background: transparent; border: 2px solid #000; color: #000; }
+  .unnap-cta__btn--secondary:hover { background: #000; color: #fff; }
+  .unnap-cta__stats {
+    padding-top: 4rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+  .unnap-cta__stat-value { font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .unnap-cta__stat-label { font-size: 0.875rem; color: rgba(0,0,0,0.4); }
+  .unnap-cta__actions.unnap-animate,
+  .unnap-cta__stats > div.unnap-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  .unnap-cta__actions.unnap-animate.unnap-animate--in,
+  .unnap-cta__stats > div.unnap-animate.unnap-animate--in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .unnap-cta__stats > div.unnap-animate--in:nth-child(1) { transition-delay: 0.05s; }
+  .unnap-cta__stats > div.unnap-animate--in:nth-child(2) { transition-delay: 0.1s; }
+  .unnap-cta__stats > div.unnap-animate--in:nth-child(3) { transition-delay: 0.15s; }
+</style>
+
+<section class="unnap-cta" id="join">
+  <div class="unnap-cta__container">
+    <div class="unnap-cta__kicker unnap-animate" data-delay="0">Join UNNAP</div>
+    <h2 class="unnap-cta__title unnap-animate" data-delay="0.1">Start building tomorrow.</h2>
+    <p class="unnap-cta__lead unnap-animate" data-delay="0.2">
+      Every legend starts with day one. Download UNNAP and turn morning discipline into your competitive advantage.
+    </p>
+    <div class="unnap-cta__actions unnap-animate" data-delay="0.3">
+      <a href="{{ app_store_url }}" class="unnap-cta__btn unnap-cta__btn--primary">Download for iOS</a>
+      <a href="{{ product_url | prepend: shop.url }}" class="unnap-cta__btn unnap-cta__btn--secondary">Learn More</a>
+    </div>
+    <div class="unnap-cta__stats">
+      <div class="unnap-animate">
+        <div class="unnap-cta__stat-value">50k+</div>
+        <div class="unnap-cta__stat-label">Active Members</div>
+      </div>
+      <div class="unnap-animate">
+        <div class="unnap-cta__stat-value">4.8★</div>
+        <div class="unnap-cta__stat-label">App Store Rating</div>
+      </div>
+      <div class="unnap-animate">
+        <div class="unnap-cta__stat-value">2M+</div>
+        <div class="unnap-cta__stat-label">Successful Wake-Ups</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "UNNAP Landing Final CTA",
+  "tag": "section",
+  "class": "section-unnap-final-cta",
+  "settings": [
+    { "type": "text", "id": "product_url", "label": "Product URL path", "default": "/products/unnap" },
+    { "type": "url", "id": "app_store_url", "label": "App Store / Download URL" }
+  ],
+  "presets": [{ "name": "UNNAP Landing Final CTA", "category": "UNNAP" }]
+}
+{% endschema %}

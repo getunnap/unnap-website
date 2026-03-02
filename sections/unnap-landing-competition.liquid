@@ -1,0 +1,313 @@
+{% comment %}
+  UNNAP Landing - The Competition
+  Challenge types + Active 1v1 and Group challenges
+{% endcomment %}
+
+<style>
+  .unnap-comp { padding: 8rem 1.5rem; background: #fff; color: #000; }
+  .unnap-comp__container { max-width: 1280px; margin: 0 auto; }
+  .unnap-comp__header { max-width: 48rem; margin-bottom: 5rem; }
+  .unnap-comp__kicker {
+    font-size: 0.875rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(0,0,0,0.4); margin-bottom: 1.5rem;
+  }
+  .unnap-comp__title {
+    font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 800; letter-spacing: -0.03em;
+    margin-bottom: 2rem; line-height: 1.1;
+  }
+  .unnap-comp__title .line2 { display: block; }
+  .unnap-comp__lead { font-size: 1.25rem; color: rgba(0,0,0,0.6); line-height: 1.6; }
+  .unnap-comp__subtitle { font-size: 1.875rem; margin-bottom: 2rem; }
+  .unnap-comp__types {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 5rem;
+  }
+  @media (min-width: 768px) { .unnap-comp__types { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .unnap-comp__types { grid-template-columns: repeat(3, 1fr); } }
+  .unnap-comp__type-card {
+    background: #f9fafb;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  .unnap-comp__type-icon {
+    width: 3.5rem; height: 3.5rem; border-radius: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem; font-size: 1.5rem;
+  }
+  .unnap-comp__type-icon svg,
+  .unnap-comp__challenge-icon svg {
+    width: 1.75rem; height: 1.75rem;
+    flex-shrink: 0;
+    color: inherit;
+  }
+  .unnap-comp__challenge-icon svg { width: 1.5rem; height: 1.5rem; }
+  .unnap-comp__type-name { font-size: 1.25rem; margin-bottom: 0.25rem; }
+  .unnap-comp__type-desc { font-size: 0.875rem; color: rgba(0,0,0,0.5); margin-bottom: 0.5rem; }
+  .unnap-comp__type-detail { font-size: 0.875rem; color: #db2777; display: flex; align-items: flex-start; gap: 0.5rem; }
+  .unnap-comp__type-detail svg { width: 1rem; height: 1rem; flex-shrink: 0; margin-top: 0.125rem; color: #db2777; }
+  .unnap-comp__two-col {
+    display: grid;
+    gap: 1.5rem;
+  }
+  @media (min-width: 1024px) { .unnap-comp__two-col { grid-template-columns: 1fr 1fr; } }
+  .unnap-comp__col-title { font-size: 1.125rem; margin-bottom: 1rem; }
+  .unnap-comp__challenge-card {
+    background: #f9fafb;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 1rem;
+  }
+  .unnap-comp__challenge-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  .unnap-comp__challenge-head-left { display: flex; align-items: center; gap: 0.75rem; }
+  .unnap-comp__challenge-icon {
+    width: 3rem; height: 3rem; border-radius: 1rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .unnap-comp__challenge-name { font-size: 1.125rem; }
+  .unnap-comp__challenge-opp { font-size: 0.875rem; color: rgba(0,0,0,0.5); }
+  .unnap-comp__badge {
+    font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 9999px;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .unnap-comp__badge--win { background: #22c55e; color: #fff; }
+  .unnap-comp__stakes {
+    background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 0.75rem;
+    padding: 1rem; margin-bottom: 1rem;
+  }
+  .unnap-comp__stakes-label { font-size: 0.75rem; color: #15803d; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+  .unnap-comp__scores {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .unnap-comp__score-box {
+    flex: 1;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  .unnap-comp__score-box--you { background: #dcfce7; }
+  .unnap-comp__score-label { font-size: 0.75rem; color: rgba(0,0,0,0.4); margin-bottom: 0.25rem; }
+  .unnap-comp__score-value { font-size: 1.875rem; font-weight: 700; }
+  .unnap-comp__days {
+    background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 0.75rem;
+    padding: 0.75rem; text-align: center; font-size: 0.875rem; color: #1d4ed8;
+  }
+  .unnap-comp__progress {
+    margin-bottom: 1rem;
+  }
+  .unnap-comp__progress-top { display: flex; justify-content: space-between; font-size: 0.875rem; margin-bottom: 0.5rem; color: rgba(0,0,0,0.5); }
+  .unnap-comp__progress-bar {
+    width: 100%;
+    height: 0.5rem;
+    background: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+  .unnap-comp__progress-fill { height: 100%; border-radius: 9999px; }
+  .unnap-comp__meta { font-size: 0.875rem; color: rgba(0,0,0,0.5); margin-bottom: 1rem; }
+  .unnap-comp__active-badge { background: #f97316; color: #fff; font-size: 0.875rem; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-left: 0.75rem; }
+  .unnap-comp__active-desc { color: rgba(0,0,0,0.6); margin-bottom: 2rem; }
+  .unnap-comp__type-card.unnap-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  .unnap-comp__type-card.unnap-animate.unnap-animate--in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .unnap-comp__types .unnap-comp__type-card.unnap-animate--in:nth-child(1) { transition-delay: 0.05s; }
+  .unnap-comp__types .unnap-comp__type-card.unnap-animate--in:nth-child(2) { transition-delay: 0.1s; }
+  .unnap-comp__types .unnap-comp__type-card.unnap-animate--in:nth-child(3) { transition-delay: 0.15s; }
+  .unnap-comp__types .unnap-comp__type-card.unnap-animate--in:nth-child(4) { transition-delay: 0.2s; }
+  .unnap-comp__types .unnap-comp__type-card.unnap-animate--in:nth-child(5) { transition-delay: 0.25s; }
+  .unnap-comp__challenge-card.unnap-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  .unnap-comp__challenge-card.unnap-animate.unnap-animate--in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .unnap-comp__two-col > div .unnap-comp__challenge-card.unnap-animate--in:nth-child(2) { transition-delay: 0.05s; }
+  .unnap-comp__two-col > div .unnap-comp__challenge-card.unnap-animate--in:nth-child(3) { transition-delay: 0.1s; }
+  .unnap-comp__two-col > div .unnap-comp__challenge-card.unnap-animate--in:nth-child(4) { transition-delay: 0.15s; }
+  .unnap-comp__two-col > div .unnap-comp__challenge-card.unnap-animate--in:nth-child(5) { transition-delay: 0.2s; }
+</style>
+
+<section class="unnap-comp" id="competition">
+  <div class="unnap-comp__container">
+    <div class="unnap-comp__header">
+      <div class="unnap-comp__kicker unnap-animate" data-delay="0">The Competition</div>
+      <h2 class="unnap-comp__title unnap-animate" data-delay="0.1">Challenge your friends. <span class="line2">Put something on the line.</span></h2>
+      <p class="unnap-comp__lead unnap-animate" data-delay="0.2">
+        Create 1v1 challenges or multi-person group competitions. Set the stakes, choose the duration, and prove who has the real discipline.
+      </p>
+    </div>
+
+    <h3 class="unnap-comp__subtitle unnap-animate" data-delay="0.3">Choose a challenge type</h3>
+    <div class="unnap-comp__types">
+      <div class="unnap-comp__type-card unnap-animate">
+        <div class="unnap-comp__type-icon" style="background:#f97316;color:#fff">{% render 'unnap-icon', icon: 'flame' %}</div>
+        <div class="unnap-comp__type-name">Streak Battle</div>
+        <div class="unnap-comp__type-desc">Who can maintain the longest streak?</div>
+        <div class="unnap-comp__type-detail">{% render 'unnap-icon', icon: 'target' %}<span>Wake up on time for X consecutive days</span></div>
+      </div>
+      <div class="unnap-comp__type-card unnap-animate">
+        <div class="unnap-comp__type-icon" style="background:#ec4899;color:#fff">{% render 'unnap-icon', icon: 'zap' %}</div>
+        <div class="unnap-comp__type-name">Speed Demon</div>
+        <div class="unnap-comp__type-desc">Fastest average alarm response time wins!</div>
+        <div class="unnap-comp__type-detail">{% render 'unnap-icon', icon: 'target' %}<span>Get the fastest average response time over X days</span></div>
+      </div>
+      <div class="unnap-comp__type-card unnap-animate">
+        <div class="unnap-comp__type-icon" style="background:#3b82f6;color:#fff">{% render 'unnap-icon', icon: 'target' %}</div>
+        <div class="unnap-comp__type-name">Consistency King</div>
+        <div class="unnap-comp__type-desc">Most wake-ups within 5 minutes of goal time</div>
+        <div class="unnap-comp__type-detail">{% render 'unnap-icon', icon: 'target' %}<span>Wake up within 5 min of goal for X days</span></div>
+      </div>
+      <div class="unnap-comp__type-card unnap-animate">
+        <div class="unnap-comp__type-icon" style="background:#22c55e;color:#fff">{% render 'unnap-icon', icon: 'clock' %}</div>
+        <div class="unnap-comp__type-name">Early Bird Challenge</div>
+        <div class="unnap-comp__type-desc">Wake up before 6 AM every day</div>
+        <div class="unnap-comp__type-detail">{% render 'unnap-icon', icon: 'target' %}<span>X consecutive wake-ups before 6:00 AM</span></div>
+      </div>
+      <div class="unnap-comp__type-card unnap-animate">
+        <div class="unnap-comp__type-icon" style="background:#ef4444;color:#fff">{% render 'unnap-icon', icon: 'dumbbell' %}</div>
+        <div class="unnap-comp__type-name">Workout Warrior</div>
+        <div class="unnap-comp__type-desc">Start a workout within X hours of waking up</div>
+        <div class="unnap-comp__type-detail">{% render 'unnap-icon', icon: 'target' %}<span>Complete X days with workouts after waking</span></div>
+      </div>
+    </div>
+
+    <div class="unnap-comp__header">
+      <h3 class="unnap-comp__subtitle">Active Challenges <span class="unnap-comp__active-badge">5</span></h3>
+      <p class="unnap-comp__active-desc">Real-time scoring. Live competition. Actual stakes.</p>
+    </div>
+
+    <div class="unnap-comp__two-col">
+      <div>
+        <div class="unnap-comp__col-title">1v1 Challenges</div>
+        <div class="unnap-comp__challenge-card unnap-animate">
+          <div class="unnap-comp__challenge-head">
+            <div class="unnap-comp__challenge-head-left">
+              <div class="unnap-comp__challenge-icon" style="background:#ec4899;color:#fff">{% render 'unnap-icon', icon: 'zap' %}</div>
+              <div>
+                <div class="unnap-comp__challenge-name">14-Day Speed Demon</div>
+                <div class="unnap-comp__challenge-opp">vs Sarah Chen</div>
+              </div>
+            </div>
+            <span class="unnap-comp__badge unnap-comp__badge--win">WINNING</span>
+          </div>
+          <div class="unnap-comp__stakes">
+            <div class="unnap-comp__stakes-label">What's on the line?</div>
+            <div>Loser buys coffee ☕</div>
+          </div>
+          <div class="unnap-comp__scores">
+            <div class="unnap-comp__score-box unnap-comp__score-box--you">
+              <div class="unnap-comp__score-label">You</div>
+              <div class="unnap-comp__score-value">8.2</div>
+            </div>
+            <div style="color:rgba(0,0,0,0.3);font-size:1.25rem">VS</div>
+            <div class="unnap-comp__score-box" style="background:#f3f4f6">
+              <div class="unnap-comp__score-label">SC</div>
+              <div class="unnap-comp__score-value">9.5</div>
+            </div>
+          </div>
+          <div class="unnap-comp__days">10 days left</div>
+        </div>
+        <div class="unnap-comp__challenge-card unnap-animate">
+          <div class="unnap-comp__challenge-head">
+            <div class="unnap-comp__challenge-head-left">
+              <div class="unnap-comp__challenge-icon" style="background:#f97316;color:#fff">{% render 'unnap-icon', icon: 'flame' %}</div>
+              <div>
+                <div class="unnap-comp__challenge-name">30-Day Streak Battle</div>
+                <div class="unnap-comp__challenge-opp">vs Mike Johnson</div>
+              </div>
+            </div>
+            <span class="unnap-comp__badge unnap-comp__badge--win">WINNING</span>
+          </div>
+          <div class="unnap-comp__stakes">
+            <div class="unnap-comp__stakes-label">What's on the line?</div>
+            <div>Loser does 100 pushups 💪</div>
+          </div>
+          <div class="unnap-comp__scores">
+            <div class="unnap-comp__score-box unnap-comp__score-box--you">
+              <div class="unnap-comp__score-label">You</div>
+              <div class="unnap-comp__score-value">18</div>
+            </div>
+            <div style="color:rgba(0,0,0,0.3)">VS</div>
+            <div class="unnap-comp__score-box" style="background:#f3f4f6">
+              <div class="unnap-comp__score-label">MJ</div>
+              <div class="unnap-comp__score-value">15</div>
+            </div>
+          </div>
+          <div class="unnap-comp__days">12 days left</div>
+        </div>
+      </div>
+      <div>
+        <div class="unnap-comp__col-title">Group Challenges</div>
+        <div class="unnap-comp__challenge-card unnap-animate">
+          <div class="unnap-comp__challenge-head">
+            <div class="unnap-comp__challenge-head-left">
+              <div class="unnap-comp__challenge-icon" style="background:#f97316;color:#fff">{% render 'unnap-icon', icon: 'flame' %}</div>
+              <div>
+                <div class="unnap-comp__challenge-name">30-Day Streak Challenge</div>
+                <div class="unnap-comp__challenge-opp">Maintain the longest consecutive wake-up streak</div>
+              </div>
+            </div>
+          </div>
+          <div class="unnap-comp__progress">
+            <div class="unnap-comp__progress-top"><span>Challenge Progress</span><span>18/30 days</span></div>
+            <div class="unnap-comp__progress-bar"><div class="unnap-comp__progress-fill" style="width:60%;background:#f97316"></div></div>
+          </div>
+          <div class="unnap-comp__meta">Rank #2 • Score 16 • 8 members</div>
+          <div class="unnap-comp__stakes">
+            <div class="unnap-comp__stakes-label">What's on the line?</div>
+            <div>Last place buys coffee ☕</div>
+          </div>
+        </div>
+        <div class="unnap-comp__challenge-card unnap-animate">
+          <div class="unnap-comp__challenge-head">
+            <div class="unnap-comp__challenge-head-left">
+              <div class="unnap-comp__challenge-icon" style="background:#ef4444;color:#fff">{% render 'unnap-icon', icon: 'dumbbell' %}</div>
+              <div>
+                <div class="unnap-comp__challenge-name">Morning Workout Challenge</div>
+                <div class="unnap-comp__challenge-opp">Start workout within 2 hours after waking up</div>
+              </div>
+            </div>
+          </div>
+          <div class="unnap-comp__progress">
+            <div class="unnap-comp__progress-top"><span>Challenge Progress</span><span>9/14 days</span></div>
+            <div class="unnap-comp__progress-bar"><div class="unnap-comp__progress-fill" style="width:64%;background:#ef4444"></div></div>
+          </div>
+          <div class="unnap-comp__meta">Rank #2 • Score 7 • 8 members</div>
+          <div class="unnap-comp__stakes">
+            <div class="unnap-comp__stakes-label">What's on the line?</div>
+            <div>Winner takes all 💰</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "UNNAP Landing Competition",
+  "tag": "section",
+  "class": "section-unnap-competition",
+  "settings": [],
+  "presets": [{ "name": "UNNAP Landing Competition", "category": "UNNAP" }]
+}
+{% endschema %}

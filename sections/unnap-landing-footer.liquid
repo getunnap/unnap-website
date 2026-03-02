@@ -1,0 +1,162 @@
+{% comment %}
+  UNNAP Landing - Custom footer (Product, Company, Support, Community)
+{% endcomment %}
+
+<style>
+  .unnap-footer {
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 5rem 1.5rem;
+    color: #fff;
+  }
+  .unnap-footer__container { max-width: 1280px; margin: 0 auto; }
+  .unnap-footer__top {
+    display: grid;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+  @media (min-width: 768px) { .unnap-footer__top { grid-template-columns: 2fr repeat(3, 1fr); } }
+  .unnap-footer__brand { margin-bottom: 1rem; }
+  .unnap-footer__brand img { height: 2.5rem; width: auto; display: block; }
+  .unnap-footer__brand a { display: inline-block; }
+  .unnap-footer__tagline {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.6;
+    max-width: 20rem;
+  }
+  .unnap-footer__col h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1rem;
+  }
+  .unnap-footer__col ul { list-style: none; padding: 0; margin: 0; }
+  .unnap-footer__col li { margin-bottom: 0.75rem; }
+  .unnap-footer__col a {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .unnap-footer__col a:hover { color: #fff; }
+  .unnap-footer__bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.4);
+  }
+  .unnap-footer__social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .unnap-footer__social a {
+    color: rgba(255,255,255,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+  }
+  .unnap-footer__social a:hover { color: #fff; }
+  .unnap-footer__social svg { width: 1.25rem; height: 1.25rem; }
+</style>
+
+<footer class="unnap-footer" role="contentinfo">
+  <div class="unnap-footer__container">
+    <div class="unnap-footer__top">
+      <div>
+        <div class="unnap-footer__brand">
+          <a href="{{ shop.url }}" aria-label="UNNAP home">
+            {% if section.settings.logo != blank %}
+              <img src="{{ section.settings.logo | image_url: width: 120 }}" alt="UNNAP" width="120" height="64">
+            {% elsif section.settings.logo_url != blank %}
+              <img src="{{ section.settings.logo_url }}" alt="UNNAP" width="120" height="64">
+            {% else %}
+              <img src="{{ 'unnap-logo.png' | asset_url }}" alt="UNNAP" width="120" height="64">
+            {% endif %}
+          </a>
+        </div>
+        <p class="unnap-footer__tagline">
+          Competitive morning performance system for building discipline and accountability through measurable wake-up tracking.
+        </p>
+        {% assign has_social_url = false %}
+        {% if section.settings.twitter_url != blank or section.settings.instagram_url != blank or section.settings.youtube_url != blank %}{% assign has_social_url = true %}{% endif %}
+        {% if section.settings.show_social and has_social_url %}
+          <div class="unnap-footer__social" aria-label="Social links">
+            {% if section.settings.twitter_url != blank %}
+              <a href="{{ section.settings.twitter_url }}" target="_blank" rel="noopener" aria-label="Twitter">{% render 'unnap-icon', icon: 'twitter' %}</a>
+            {% endif %}
+            {% if section.settings.instagram_url != blank %}
+              <a href="{{ section.settings.instagram_url }}" target="_blank" rel="noopener" aria-label="Instagram">{% render 'unnap-icon', icon: 'instagram' %}</a>
+            {% endif %}
+            {% if section.settings.youtube_url != blank %}
+              <a href="{{ section.settings.youtube_url }}" target="_blank" rel="noopener" aria-label="YouTube">{% render 'unnap-icon', icon: 'youtube' %}</a>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+      <nav class="unnap-footer__col" aria-label="Product">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#competition">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="{{ shop.url }}/products/unnap">UNNAP 2.0</a></li>
+        </ul>
+      </nav>
+      <nav class="unnap-footer__col" aria-label="Company">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#ugc-academy">UGC academy</a></li>
+        </ul>
+      </nav>
+      <nav class="unnap-footer__col" aria-label="Support">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#help">Help</a></li>
+          <li><a href="{{ shop.url }}/pages/contact">Contact</a></li>
+          <li><a href="{{ shop.url }}/policies/privacy-policy">Privacy</a></li>
+          <li><a href="{{ shop.url }}/policies/terms-of-service">Terms</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="unnap-footer__bottom">
+      <p>© {{ 'now' | date: '%Y' }} UNNAP. All rights reserved.</p>
+      <p>Built for those who refuse to hit snooze.</p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "UNNAP Landing Footer",
+  "tag": "section",
+  "class": "section-unnap-footer",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo image (same as header)" },
+    { "type": "url", "id": "logo_url", "label": "Logo URL (if no image uploaded)" },
+    {
+      "type": "header",
+      "content": "Social links"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "label": "Show social icons",
+      "default": true
+    },
+    { "type": "url", "id": "twitter_url", "label": "Twitter / X URL" },
+    { "type": "url", "id": "instagram_url", "label": "Instagram URL" },
+    { "type": "url", "id": "youtube_url", "label": "YouTube URL" }
+  ],
+  "presets": [{ "name": "UNNAP Landing Footer", "category": "UNNAP" }]
+}
+{% endschema %}

@@ -1,0 +1,39 @@
+{% comment %}
+  UNNAP landing animations: scroll-in (fade up) and Problem countdown.
+  Load only on landing-test template.
+{% endcomment %}
+<style>
+  .unnap-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .unnap-animate.unnap-animate--in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .unnap-animate[data-delay="0.1"].unnap-animate--in { transition-delay: 0.1s; }
+  .unnap-animate[data-delay="0.2"].unnap-animate--in { transition-delay: 0.2s; }
+  .unnap-animate[data-delay="0.3"].unnap-animate--in { transition-delay: 0.3s; }
+  .unnap-animate[data-delay="0.4"].unnap-animate--in { transition-delay: 0.4s; }
+  .unnap-animate[data-delay="0.5"].unnap-animate--in { transition-delay: 0.5s; }
+  .unnap-animate--slide-left {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .unnap-animate--slide-left.unnap-animate--in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .unnap-animate--scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  .unnap-animate--scale.unnap-animate--in {
+    opacity: 1;
+    transform: scale(1);
+  }
+</style>
+<script src="{{ 'unnap-animations.js' | asset_url }}" defer></script>

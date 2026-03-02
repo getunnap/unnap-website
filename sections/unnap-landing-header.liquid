@@ -1,0 +1,100 @@
+{% comment %}
+  UNNAP Landing - Fixed header with logo and CTAs
+{% endcomment %}
+{%- assign product_url = section.settings.product_url | default: '/products/unnap' -%}
+{%- if product_url == '' -%}{%- assign product_url = '/products/unnap' -%}{%- endif -%}
+
+<style>
+  .unnap-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .unnap-header__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .unnap-header__logo {
+    height: 4rem;
+    width: auto;
+    display: block;
+  }
+  .unnap-header__logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .unnap-header__nav {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .unnap-header__nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      font-size: 0.875rem;
+    }
+  }
+  .unnap-header__nav a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .unnap-header__nav a:hover { color: #fff; }
+  .unnap-header__cta {
+    padding: 0.5rem 1.5rem;
+    background: #fff;
+    color: #000;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 9999px;
+    transition: opacity 0.2s;
+  }
+  .unnap-header__cta:hover { opacity: 0.9; }
+</style>
+
+<header class="unnap-header" role="banner">
+  <div class="unnap-header__inner">
+    <a href="{{ shop.url }}" aria-label="UNNAP home">
+      {% if section.settings.logo != blank %}
+        <img src="{{ section.settings.logo | image_url: width: 120 }}" alt="UNNAP" class="unnap-header__logo" width="120" height="64">
+      {% elsif section.settings.logo_url != blank %}
+        <img src="{{ section.settings.logo_url }}" alt="UNNAP" class="unnap-header__logo" width="120" height="64">
+      {% else %}
+        <img src="{{ 'unnap-logo.png' | asset_url }}" alt="UNNAP" class="unnap-header__logo" width="120" height="64">
+      {% endif %}
+    </a>
+    <nav class="unnap-header__nav" aria-label="Main navigation">
+      <a href="#competition">Features</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#about">About</a>
+    </nav>
+    <a href="{{ shop.url }}/products/unnap" class="unnap-header__cta">Shop</a>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "UNNAP Landing Header",
+  "tag": "section",
+  "class": "section-unnap-header",
+  "settings": [
+    { "type": "text", "id": "product_url", "label": "Product URL path", "default": "/products/unnap" },
+    { "type": "image_picker", "id": "logo", "label": "Logo image" },
+    { "type": "url", "id": "logo_url", "label": "Logo URL (if no image uploaded)" }
+  ],
+  "presets": [{ "name": "UNNAP Landing Header", "category": "UNNAP" }]
+}
+{% endschema %}

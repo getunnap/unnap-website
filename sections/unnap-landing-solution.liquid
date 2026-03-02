@@ -1,0 +1,145 @@
+{% comment %}
+  UNNAP Landing - How It Works (Solution)
+  4 steps + image
+{% endcomment %}
+{%- assign product_url = section.settings.product_url | default: '/products/unnap' -%}
+{%- if product_url == '' -%}{%- assign product_url = '/products/unnap' -%}{%- endif -%}
+
+<style>
+  .unnap-solution {
+    padding: 8rem 1.5rem;
+    background: #000;
+    color: #fff;
+  }
+  .unnap-solution__container { max-width: 1280px; margin: 0 auto; }
+  .unnap-solution__grid {
+    display: grid;
+    gap: 5rem;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .unnap-solution__grid { grid-template-columns: 1fr 1fr; }
+  }
+  .unnap-solution__kicker {
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1.5rem;
+  }
+  .unnap-solution__title {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+  .unnap-solution__steps { display: flex; flex-direction: column; gap: 2rem; }
+  .unnap-solution__step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .unnap-solution__step-num {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  .unnap-solution__step-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .unnap-solution__step-desc { color: rgba(255,255,255,0.6); line-height: 1.6; }
+  .unnap-solution__media {
+    aspect-ratio: 4/5;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .unnap-solution__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .unnap-solution__placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 1rem;
+  }
+  .unnap-solution__placeholder-label { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .unnap-solution__placeholder-hint { font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+</style>
+
+<section class="unnap-solution" id="how-it-works">
+  <div class="unnap-solution__container">
+    <div class="unnap-solution__grid">
+      <div>
+        <div class="unnap-solution__kicker unnap-animate" data-delay="0">How It Works</div>
+        <h2 class="unnap-solution__title unnap-animate" data-delay="0.1">Deliberate action. Verified performance.</h2>
+        <div class="unnap-solution__steps">
+          <div class="unnap-solution__step unnap-animate unnap-animate--slide-left" data-delay="0.2">
+            <span class="unnap-solution__step-num">1</span>
+            <div>
+              <h3 class="unnap-solution__step-title">Set Your Target</h3>
+              <p class="unnap-solution__step-desc">Define your wake-up time. This becomes your daily commitment.</p>
+            </div>
+          </div>
+          <div class="unnap-solution__step unnap-animate unnap-animate--slide-left" data-delay="0.3">
+            <span class="unnap-solution__step-num">2</span>
+            <div>
+              <h3 class="unnap-solution__step-title">Alarm Activates</h3>
+              <p class="unnap-solution__step-desc">The alarm requires verification. No snooze. No dismiss.</p>
+            </div>
+          </div>
+          <div class="unnap-solution__step unnap-animate unnap-animate--slide-left" data-delay="0.4">
+            <span class="unnap-solution__step-num">3</span>
+            <div>
+              <h3 class="unnap-solution__step-title">Verify with Magnet or Barcode</h3>
+              <p class="unnap-solution__step-desc">Tap your UNNAP magnet or scan a barcode placed away from bed.</p>
+            </div>
+          </div>
+          <div class="unnap-solution__step unnap-animate unnap-animate--slide-left" data-delay="0.5">
+            <span class="unnap-solution__step-num">4</span>
+            <div>
+              <h3 class="unnap-solution__step-title">Performance Logged</h3>
+              <p class="unnap-solution__step-desc">Every wake is tracked, scored, and added to your competitive record.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="unnap-solution__media unnap-animate unnap-animate--scale" data-delay="0.3">
+        {% if section.settings.solution_image != blank %}
+          {{ section.settings.solution_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: 'UNNAP NFC device' }}
+        {% elsif section.settings.solution_image_url != blank %}
+          <img src="{{ section.settings.solution_image_url }}" alt="UNNAP NFC device" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+        {% else %}
+          <img src="{{ 'unnap-solution-device.png' | asset_url }}" alt="UNNAP NFC device" loading="lazy" width="320" height="400" style="width:100%;height:100%;object-fit:cover;">
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "UNNAP Landing Solution",
+  "tag": "section",
+  "class": "section-unnap-solution",
+  "settings": [
+    { "type": "text", "id": "product_url", "label": "Product URL path", "default": "/products/unnap" },
+    { "type": "image_picker", "id": "solution_image", "label": "Solution image (NFC device)" },
+    { "type": "url", "id": "solution_image_url", "label": "Solution image URL (if no image uploaded)" }
+  ],
+  "presets": [{ "name": "UNNAP Landing Solution", "category": "UNNAP" }]
+}
+{% endschema %}

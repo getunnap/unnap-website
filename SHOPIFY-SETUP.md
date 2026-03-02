@@ -214,6 +214,21 @@ You can later create a repo on GitHub/GitLab and push this folder there.
 
 ---
 
+## Test landing page (new home page)
+
+A **test landing page** template is set up so you can try new home-page changes without affecting the live site.
+
+1. **Template file:** `templates/page.landing-test.json` (same layout as the home page).
+2. **Create the page in Shopify Admin:**
+   - Go to **Online Store → Pages → Add page**.
+   - **Title:** e.g. "Test landing" or "Home (test)".
+   - **Theme template:** choose **"landing-test"** (from the "Theme template" dropdown).
+   - Save. The page will be at `yoursite.com/pages/test-landing` (or whatever handle you set).
+3. **Push the theme** (if you haven’t already): `shopify theme push`.
+4. Edit `templates/page.landing-test.json` for test changes; when happy, copy those changes into `templates/index.json` to go live.
+
+---
+
 ## Quick reference
 
 | Goal                         | Command / action                          |
