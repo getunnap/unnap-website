@@ -76,6 +76,13 @@
     object-fit: contain;
   }
   .unnap-int__card-cat { font-size: 0.75rem; color: rgba(0,0,0,0.4); text-transform: uppercase; letter-spacing: 0.05em; }
+  .unnap-int__card-soon {
+    font-size: 0.6875rem;
+    color: rgba(0,0,0,0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 0.25rem;
+  }
   .unnap-int__footer { text-align: center; margin-top: 4rem; }
   .unnap-int__footer p { font-size: 1.125rem; color: rgba(0,0,0,0.6); }
   .unnap-int__footer strong { color: #000; }
@@ -92,6 +99,10 @@
     </header>
     <div class="unnap-int__grid">
       {% for block in section.blocks %}
+        {% assign is_live = false %}
+        {% if block.settings.logo_asset == 'strava' or block.settings.logo_asset == 'apple-health' %}{% assign is_live = true %}{% endif %}
+        {% assign name_lower = block.settings.name | downcase %}
+        {% if name_lower contains 'strava' or name_lower contains 'apple health' or name_lower == 'health' %}{% assign is_live = true %}{% endif %}
         <div class="unnap-int__card unnap-animate" {{ block.shopify_attributes }}>
           {% if block.settings.logo != blank %}
             <img src="{{ block.settings.logo | image_url: width: 160 }}" alt="{{ block.settings.name | default: 'Integration' }}" class="unnap-int__card-logo" loading="lazy" width="80" height="48">
@@ -102,16 +113,21 @@
             <img src="{{ asset_file | asset_url }}?v=2" alt="{{ block.settings.name }}" class="unnap-int__card-logo" loading="lazy" width="80" height="48">
           {% endif %}
           <div class="unnap-int__card-cat">{{ block.settings.category | default: 'Integration' }}</div>
+          {% unless is_live %}<div class="unnap-int__card-soon">Coming soon</div>{% endunless %}
         </div>
       {% endfor %}
       {% if section.blocks.size == 0 %}
-        {% assign defaults = "strava,Fitness|apple-health,Health Data|whoop,Performance|oura-v3,Sleep Tracking|garmin-v3,Wearables|philips-hue,Smart Lighting|matter-v3,Smart Home|fitbit,Wearable" | split: "|" %}
+        {% assign defaults = "strava,Fitness|apple-health,Health Data|whoop,Wearable|oura-v3,Sleep Tracking|garmin-v3,Wearable|philips-hue,Smart Lighting|matter-v3,Smart Home|fitbit,Wearable" | split: "|" %}
         {% for item in defaults %}
           {% assign parts = item | split: "," %}
+          {% assign slug = parts[0] %}
+          {% assign is_live_default = false %}
+          {% if slug == 'strava' or slug == 'apple-health' %}{% assign is_live_default = true %}{% endif %}
           <div class="unnap-int__card unnap-animate">
-            {% assign asset_file = 'unnap-int-' | append: parts[0] | append: '.png' %}
+            {% assign asset_file = 'unnap-int-' | append: slug | append: '.png' %}
             <img src="{{ asset_file | asset_url }}?v=2" alt="Integration" class="unnap-int__card-logo" loading="lazy" width="80" height="48">
             <div class="unnap-int__card-cat">{{ parts[1] }}</div>
+            {% unless is_live_default %}<div class="unnap-int__card-soon">Coming soon</div>{% endunless %}
           </div>
         {% endfor %}
       {% endif %}
@@ -148,9 +164,9 @@
       "blocks": [
         { "type": "integration", "settings": { "name": "Strava", "category": "Fitness", "logo_asset": "strava" } },
         { "type": "integration", "settings": { "name": "Apple Health", "category": "Health Data", "logo_asset": "apple-health" } },
-        { "type": "integration", "settings": { "name": "Whoop", "category": "Performance", "logo_asset": "whoop" } },
+        { "type": "integration", "settings": { "name": "Whoop", "category": "Wearable", "logo_asset": "whoop" } },
         { "type": "integration", "settings": { "name": "Oura", "category": "Sleep Tracking", "logo_asset": "oura-v3" } },
-        { "type": "integration", "settings": { "name": "Garmin", "category": "Wearables", "logo_asset": "garmin-v3" } },
+        { "type": "integration", "settings": { "name": "Garmin", "category": "Wearable", "logo_asset": "garmin-v3" } },
         { "type": "integration", "settings": { "name": "Philips Hue", "category": "Smart Lighting", "logo_asset": "philips-hue" } },
         { "type": "integration", "settings": { "name": "Matter", "category": "Smart Home", "logo_asset": "matter-v3" } },
         { "type": "integration", "settings": { "name": "FitBit", "category": "Wearable", "logo_asset": "fitbit" } }
