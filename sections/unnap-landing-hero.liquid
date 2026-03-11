@@ -179,8 +179,9 @@
       <div class="unnap-hero__media unnap-animate unnap-animate--scale" data-delay="0.3">
         <div class="unnap-hero__media-box">
           <video
+            id="unnap-hero-video"
             class="unnap-hero__media-img"
-            src="https://revolvecohosts.com/magnet-animation-121-mp4/"
+            src="https://videos.files.wordpress.com/ZFqppRW8/magnet-animation.121-1.mp4"
             poster="{{ 'unnap-hero-app.png' | asset_url }}"
             width="800"
             height="800"
@@ -196,6 +197,37 @@
     </div>
   </div>
 </section>
+
+<script>
+(function() {
+  var video = document.getElementById('unnap-hero-video');
+  if (!video) return;
+
+  function tryPlay() {
+    if (video.paused) {
+      var p = video.play();
+      if (p && typeof p.then === 'function') p.catch(function() {});
+    }
+  }
+
+  video.muted = true;
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+
+  video.addEventListener('loadeddata', tryPlay);
+  video.addEventListener('canplay', tryPlay);
+  if (video.readyState >= 2) tryPlay();
+
+  document.addEventListener('touchstart', function once() {
+    tryPlay();
+    document.removeEventListener('touchstart', once);
+  }, { passive: true });
+  document.addEventListener('scroll', function once() {
+    tryPlay();
+    document.removeEventListener('scroll', once);
+  }, { passive: true });
+})();
+</script>
 
 {% schema %}
 {

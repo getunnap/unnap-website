@@ -44,15 +44,15 @@
         },
         "whoop": {
           "type": "integration",
-          "settings": { "name": "Whoop", "category": "Performance", "logo_asset": "whoop" }
+          "settings": { "name": "Whoop", "category": "Wearable", "logo_asset": "whoop" }
         },
         "oura": {
           "type": "integration",
-          "settings": { "name": "Oura", "category": "Sleep Tracking", "logo_asset": "oura-v3" }
+          "settings": { "name": "Oura", "category": "Wearable", "logo_asset": "oura-v3" }
         },
         "garmin": {
           "type": "integration",
-          "settings": { "name": "Garmin", "category": "Wearables", "logo_asset": "garmin-v3" }
+          "settings": { "name": "Garmin", "category": "Wearable", "logo_asset": "garmin-v3" }
         },
         "philips_hue": {
           "type": "integration",
