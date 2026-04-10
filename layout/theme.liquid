@@ -23,6 +23,7 @@
     >
 
     {%- render 'meta-tags' -%}
+    <meta name="facebook-domain-verification" content="fl56jr3kcj1op1yiyz8h0xier7xian">
     {%- render 'fonts' -%}
     {%- render 'scripts' -%}
     {%- render 'theme-styles-variables' -%}
@@ -53,8 +54,19 @@ src="https://www.facebook.com/tr?id=818324194227215&ev=PageView&noscript=1"
   </head>
 
   <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
+    {% liquid
+      assign unnap_full_landing = false
+      if template.name == 'index'
+        assign unnap_full_landing = true
+      elsif template.name == 'page' and template.suffix == 'landing-test'
+        assign unnap_full_landing = true
+      elsif template.name == 'product'
+        # Product templates use UNNAP header/footer sections only (no theme header-group)
+        assign unnap_full_landing = true
+      endif
+    %}
     {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %}
-    {% unless template.name == 'page' and template.suffix == 'landing-test' %}
+    {% unless unnap_full_landing %}
     <div id="header-group">
       {% sections 'header-group' %}
     </div>
@@ -78,7 +90,7 @@ src="https://www.facebook.com/tr?id=818324194227215&ev=PageView&noscript=1"
       {{ content_for_layout }}
     </main>
 
-    {% unless template.name == 'page' and template.suffix == 'landing-test' %}
+    {% unless unnap_full_landing %}
     {% sections 'footer-group' %}
     {% endunless %}
 
@@ -87,7 +99,7 @@ src="https://www.facebook.com/tr?id=818324194227215&ev=PageView&noscript=1"
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
-    {% if template.name == 'page' and template.suffix == 'landing-test' %}
+    {% if unnap_full_landing %}
       {% render 'unnap-animations' %}
     {% endif %}
   </body>
